@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
+:root {
+  --nav-height: 70px;
+  --sidebar-widh: 300px;
+  --primary-bg: #f6f6f6;
+  --accent-one: #c7ffd8;
+  --accent-two: #98ded9;
+  --accent-three: #161d6f;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+html,
+body,
+#root,
+.main {
+  background-color: var(--primary-bg);
+  color: var(--accent-three);
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+nav {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: var(--nav-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid var(--accent-three);
+  z-index: 100;
+  background-color: var(--primary-bg);
+}
+
+.sidebar {
+  width: var(--sidebar-widh);
+  height: calc(100vh - var(--nav-height));
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  bottom: 0;
+  border-right: 2px solid var(--accent-three);
+  z-index: 100;
+  background-color: var(--primary-bg);
+  padding: 20px;
+}
+
+.content-wrap {
+  max-height: calc(100vh - var(--nav-height));
+  margin-left: var(--sidebar-widh);
+  margin-top: var(--nav-height);
+  overflow-y: scroll;
+}
+
+.content {
+  padding: 20px;
+}
