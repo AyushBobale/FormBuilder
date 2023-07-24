@@ -1,0 +1,11 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.header-img {
+  max-height: 350px;
+}

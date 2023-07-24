@@ -3,10 +3,14 @@
 :root {
   --nav-height: 70px;
   --sidebar-widh: 300px;
-  --primary-bg: #f6f6f6;
-  --accent-one: #c7ffd8;
-  --accent-two: #98ded9;
-  --accent-three: #161d6f;
+  /* --primary-bg: #f9f5e7;
+  --accent-one: #f8ead8;
+  --accent-two: #eddbc7;
+  --accent-three: #a7727d; */
+  --primary-bg: #f5f5f5;
+  --accent-one: #f2ead3;
+  --accent-two: #dfd7bf;
+  --accent-three: #3f2305;
 }
 * {
   margin: 0;
@@ -35,9 +39,11 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  border-bottom: 2px solid var(--accent-three);
+  /* border-bottom: 1px solid var(--accent-three); */
+  box-shadow: 0px 0px 25px -12px var(--accent-three);
+
   z-index: 100;
-  background-color: var(--primary-bg);
+  background-color: var(--accent-one);
 }
 
 .sidebar {
@@ -47,8 +53,9 @@ nav {
   top: var(--nav-height);
   left: 0;
   bottom: 0;
-  border-right: 2px solid var(--accent-three);
-  z-index: 100;
+  /* border-right: 1px solid var(--accent-three); */
+  box-shadow: 0px 0px 25px -12px var(--accent-three);
+  z-index: 90;
   background-color: var(--primary-bg);
   padding: 20px;
 }
