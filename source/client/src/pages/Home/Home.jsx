@@ -4,28 +4,29 @@ import React from "react";
 
 export const Home = () => {
   const inputTypes = {
-    button: "button",
-    checkbox: "checkbox",
+    tel: "tel",
+    text: "text",
+    password: "password",
+    number: "number",
+    file: "file",
+    time: "time",
+    email: "email",
     color: "color",
     date: "date",
     datetimeLocal: "datetime-local",
-    email: "email",
-    file: "file",
-    hidden: "hidden",
-    image: "image",
-    month: "month",
-    number: "number",
-    password: "password",
-    radio: "radio",
-    range: "range",
-    reset: "reset",
-    search: "search",
-    submit: "submit",
-    tel: "tel",
-    text: "text",
-    time: "time",
     url: "url",
-    week: "week",
+    search: "search",
+    // hidden: "hidden",
+    // image: "image",
+    // month: "month",
+    // week: "week",
+    // ----------------------------
+    button: "button",
+    // checkbox: "checkbox",
+    // radio: "radio",
+    // range: "range",
+    // reset: "reset",
+    // submit: "submit",
   };
 
   const fields = [
@@ -63,9 +64,11 @@ export const Home = () => {
             return (
               <div key={elm.fieldId} className="field-wrap">
                 <label htmlFor={elm.fieldId}>
-                  <div className="lbl-img">
-                    {elm.image && <img src={elm.image} />}
-                  </div>
+                  {elm.image && (
+                    <div className="lbl-img">
+                      <img src={elm.image} />
+                    </div>
+                  )}
                   <div>
                     {elm.label}
                     <span className={elm.isRequired ? "req" : "not-req"}>
@@ -76,121 +79,12 @@ export const Home = () => {
                     type={elm.type}
                     name={elm.fieldId}
                     placeholder={elm.placeholder}
+                    required={elm.isRequired}
                   />
                 </label>
               </div>
             );
           })}
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
         </div>
       </div>
     </>
