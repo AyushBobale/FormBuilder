@@ -68,7 +68,7 @@ export const Home = () => {
               />
             </div>
           )}
-          {fields2.map((elm, idx) => {
+          {formData?.fields?.map((elm, idx) => {
             return (
               <div key={elm.fieldId} className="field-wrap">
                 <label htmlFor={elm.fieldId}>

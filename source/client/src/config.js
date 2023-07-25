@@ -4,4 +4,5 @@ export const ROUTES = {
   PREVIEW: "/preview/:id",
   FILL: "/fill/:id",
   RESPONSES: "/responses/:id",
+  FORMS: "/forms",
 };

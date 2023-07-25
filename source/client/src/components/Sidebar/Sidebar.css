@@ -4,6 +4,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 10px;
+  font-size: 15px;
 }
 
 .sidebar > p {
@@ -14,11 +15,29 @@
 }
 
 .sidebar input {
-  padding: 5px;
+  font-size: 15px;
+  padding: 10px;
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--accent-two);
   border-radius: 5px;
+}
+
+.sidebar button {
+  font-size: 15px;
+  text-align: left;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  /* border-bottom: 1px solid var(--accent-three); */
+  box-shadow: 0px 4px 1px -4px var(--accent-three);
+  border-radius: 5px;
+  background: var(--accent-one);
+  color: var(--accent-three);
+}
+
+.sidebar button:hover {
+  background: var(--accent-two);
 }
 
 .sidebar input[type="file"] {
