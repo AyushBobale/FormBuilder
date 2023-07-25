@@ -16,6 +16,7 @@
 }
 
 .field-wrap {
+  position: relative;
   max-width: 800px;
   border-radius: 5px;
   padding: 30px;
@@ -65,4 +66,16 @@
 .not-req {
   color: transparent;
   font-size: 20px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.controls > svg {
+  cursor: pointer;
 }

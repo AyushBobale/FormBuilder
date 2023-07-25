@@ -1,60 +1,31 @@
 import "./Home.css";
 
+import {
+  faArrowDown,
+  faArrowUp,
+  faPenToSquare,
+} from "@fortawesome/free-solid-svg-icons";
+import { moveFieldDown, moveFieldUp } from "../../redux/slices/formSlice";
 import { useDispatch, useSelector } from "react-redux";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 export const Home = () => {
+  const dispatch = useDispatch();
   const formData = useSelector((state) => state?.rootReducer?.form?.data?.form);
   console.log(formData);
 
   const inputTypes = useSelector(
     (state) => state?.rootReducer?.form?.data?.types
   );
-  //   tel: "tel",
-  //   text: "text",
-  //   password: "password",
-  //   number: "number",
-  //   file: "file",
-  //   time: "time",
-  //   email: "email",
-  //   color: "color",
-  //   date: "date",
-  //   datetimeLocal: "datetime-local",
-  //   url: "url",
-  //   search: "search",
-  //   // hidden: "hidden",
-  //   // image: "image",
-  //   // month: "month",
-  //   // week: "week",
-  //   // ----------------------------
-  //   button: "button",
-  //   // checkbox: "checkbox",
-  //   // radio: "radio",
-  //   // range: "range",
-  //   // reset: "reset",
-  //   // submit: "submit",
-  // };
 
-  const fields = [
-    {
-      fieldId: "Lable1",
-      label: "Lable1",
-      placeholder: "Lable1",
-      image: "https://www.fotor.com/blog/wp-content/uploads/2017/09/1-2.jpg",
-      type: inputTypes.text,
-      isRequired: true,
-    },
-  ];
-  const fields2 = Object.keys(inputTypes).map((elm) => {
-    return {
-      fieldId: elm,
-      label: elm,
-      placeholder: elm,
-      type: inputTypes[elm],
-      isRequired: true,
-    };
-  });
+  const handleUpArrow = (elm, idx) => {
+    dispatch(moveFieldUp({ idx: idx, elm: elm }));
+  };
+  const handleDownArrow = (elm, idx) => {
+    dispatch(moveFieldDown({ idx: idx, elm: elm }));
+  };
 
   return (
     <>
@@ -71,6 +42,21 @@ export const Home = () => {
           {formData?.fields?.map((elm, idx) => {
             return (
               <div key={elm.fieldId} className="field-wrap">
+                <div className="controls">
+                  <FontAwesomeIcon
+                    icon={faArrowDown}
+                    onClick={() => {
+                      handleDownArrow(elm, idx);
+                    }}
+                  />
+                  <FontAwesomeIcon
+                    icon={faArrowUp}
+                    onClick={() => {
+                      handleUpArrow(elm, idx);
+                    }}
+                  />
+                  <FontAwesomeIcon icon={faPenToSquare} />
+                </div>
                 <label htmlFor={elm.fieldId}>
                   {elm.image && (
                     <div className="lbl-img">

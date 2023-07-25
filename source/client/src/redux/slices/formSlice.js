@@ -57,10 +57,27 @@ const dataSlice = createSlice({
     },
     removeField: (state, { payload }) => {},
     editField: (state, { payload }) => {},
-    moveField: (state, { payload }) => {},
+    moveFieldUp: (state, { payload }) => {
+      const fromIndex = payload.idx;
+      const toIndex = Math.max(0, fromIndex - 1);
+      const elm = state.data.form.fields.splice(fromIndex, 1)[0];
+      state.data.form.fields.splice(toIndex, 0, elm);
+    },
+    moveFieldDown: (state, { payload }) => {
+      const fromIndex = payload.idx;
+      const toIndex = Math.min(state.data.form.fields.length, fromIndex + 1);
+      const elm = state.data.form.fields.splice(fromIndex, 1)[0];
+      state.data.form.fields.splice(toIndex, 0, elm);
+    },
   },
 });
 
 export default dataSlice.reducer;
-export const { setHeaderImage, addField, removeField, editField, moveField } =
-  dataSlice.actions;
+export const {
+  setHeaderImage,
+  addField,
+  removeField,
+  editField,
+  moveFieldDown,
+  moveFieldUp,
+} = dataSlice.actions;
