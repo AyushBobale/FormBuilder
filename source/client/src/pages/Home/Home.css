@@ -7,5 +7,52 @@
 }
 
 .header-img {
-  max-height: 350px;
+  max-height: 250px;
+}
+
+.field-wrap {
+  padding: 0px 40px;
+  width: 100%;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-wrap label > div {
+  padding: 10px;
+}
+
+.lbl-img {
+  max-height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.lbl-img > img {
+  max-height: 200px;
+}
+
+.field-wrap label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-wrap input {
+  padding: 20px;
+  font-size: 15px;
+  border: none;
+  border-bottom: 1px solid var(--accent-two);
+  border-radius: 5px;
+}
+
+.req {
+  color: red;
+  font-size: 20px;
+}
+
+.not-req {
+  color: transparent;
+  font-size: 20px;
 }
