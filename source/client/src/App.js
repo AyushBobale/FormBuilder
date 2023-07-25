@@ -18,6 +18,10 @@ function App() {
       <Routes>
         <Route path={ROUTES.ROOT} element={<UserLayout />}>
           <Route path={ROUTES.ROOT} element={<Home />} />
+          <Route path={ROUTES.EDIT} element={<Home />} />
+          <Route path={ROUTES.PREVIEW} element={<Home />} />
+          <Route path={ROUTES.FILL} element={<Home />} />
+          <Route path={ROUTES.RESPONSES} element={<Home />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

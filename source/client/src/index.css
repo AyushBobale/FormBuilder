@@ -46,7 +46,7 @@ nav {
   background-color: var(--accent-one);
 }
 
-.sidebar {
+.sidebar-wrap {
   width: var(--sidebar-widh);
   height: calc(100vh - var(--nav-height));
   position: fixed;

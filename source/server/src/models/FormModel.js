@@ -7,6 +7,7 @@ const FieldData = new mongoose.Schema({
   image: { type: String },
   type: { type: String, required: true },
   isRequired: { type: Boolean, required: true, default: false },
+  response: { type: [String] },
 });
 
 const FormSchema = new mongoose.Schema({
@@ -15,6 +16,12 @@ const FormSchema = new mongoose.Schema({
   fields: { type: [FieldData], default: [] },
 });
 
-const FormModel = new mongoose.model("FormSchema", FormSchema);
+const FormResponseSchema = new mongoose.Schema({
+  formName: { type: String, required: true },
+  fields: { type: [FieldData], default: [] },
+});
 
-export { FormModel };
+const FormModel = mongoose.model("Form", FormSchema);
+const FormResponseModel = mongoose.model("FormResponse", FormResponseSchema);
+
+export { FormModel, FormResponseModel };
