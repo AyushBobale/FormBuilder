@@ -89,7 +89,7 @@ export const Home = () => {
                   <div>
                     {elm.label}
                     <span className={elm.isRequired ? "req" : "not-req"}>
-                      {"  *"}
+                      {/* {"  *"} */}
                     </span>
                   </div>
                   <input

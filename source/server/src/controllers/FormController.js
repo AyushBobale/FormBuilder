@@ -3,6 +3,7 @@ import {
   deleteFormService,
   getAllFormsService,
   getFormByIdService,
+  handleFormResponseService,
 } from "../../service/FormService.js";
 
 const getFormByIdController = async (req, res, next) => {
@@ -32,7 +33,6 @@ const getAllFormsController = async (req, res, next) => {
   try {
     const forms = await getAllFormsService();
     if (forms) {
-      console.log(forms);
       return res.status(200).json({
         success: true,
         message: "Forms found",
@@ -107,10 +107,38 @@ const deleteFormController = async (req, res, next) => {
   }
 };
 
+const handleFormResponseController = async (req, res, next) => {
+  try {
+    const response = await handleFormResponseService(
+      req.params.id,
+      req.body.fields
+    );
+
+    if (response) {
+      return res.status(200).json({
+        success: true,
+        message: "Response Recorded",
+        errors: [],
+        data: { response: response },
+      });
+    }
+
+    return res.status(400).json({
+      success: false,
+      message: "Could not record response",
+      errors: [],
+      data: {},
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export {
   createFormController,
   editFormController,
   deleteFormController,
   getAllFormsController,
   getFormByIdController,
+  handleFormResponseController,
 };

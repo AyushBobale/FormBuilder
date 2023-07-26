@@ -19,6 +19,7 @@ const Forms = () => {
         <div className="forms-row-head">
           <p>Sr No</p>
           <p>Form Name</p>
+          <p>Responses</p>
           <p>Fill</p>
           <p>Delete</p>
         </div>
@@ -28,6 +29,9 @@ const Forms = () => {
             <div className="forms-row">
               <p>{idx + 1}.</p>
               <p>{elm?.formName}</p>
+              <button>
+                <Link to={ROUTES.FILL(elm?._id)}>Responses</Link>
+              </button>
               <button>
                 <Link to={ROUTES.FILL(elm?._id)}>Fill</Link>
               </button>

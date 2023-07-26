@@ -1,4 +1,5 @@
 import { FormModel } from "../src/models/FormModel.js";
+import { FormResponseModel } from "../src/models/FormResponseMode.js";
 
 const getFormByIdService = async (id) => {
   return await FormModel.findById(id);
@@ -20,9 +21,17 @@ const createFormService = async (formName, formHeaderImage, fields) => {
   });
 };
 
+const handleFormResponseService = async (formId, response) => {
+  return await FormResponseModel.create({
+    formId: formId,
+    fields: response,
+  });
+};
+
 export {
   createFormService,
   getAllFormsService,
   deleteFormService,
   getFormByIdService,
+  handleFormResponseService,
 };

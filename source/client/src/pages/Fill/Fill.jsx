@@ -1,16 +1,62 @@
 import "../Home/Home.css";
 import "./Fill.css";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import {
+  useGetFormIdQuery,
+  useSubmitFormMutation,
+} from "../../redux/slices/formApi";
 import { useParams, useSearchParams } from "react-router-dom";
-
-import { useGetFormIdQuery } from "../../redux/slices/formApi";
 
 const Fill = () => {
   const { id } = useParams();
-  const { data, isLoading, error } = useGetFormIdQuery(id);
+  const { data, isLoading, error, isSuccess } = useGetFormIdQuery(id);
+  const [submitForm, results] = useSubmitFormMutation();
 
-  console.log(data?.data?.form);
+  const [formData, setFormData] = useState([]);
+
+  useEffect(() => {
+    if (isSuccess) {
+      setFormData(
+        data?.data?.form?.fields?.map((elm, idx) => {
+          return { fieldId: elm?.fieldId, response: [""] };
+        })
+      );
+    }
+  }, [isLoading]);
+
+  const handleChange = (fieldId, value) => {
+    if (!fieldId || !value) {
+      return;
+    }
+    const formDataCopy = formData;
+    const modFormData = formDataCopy.map((elm, idx) => {
+      if (elm?.fieldId == fieldId) {
+        return {
+          ...elm,
+          response: [value],
+        };
+      } else {
+        return elm;
+      }
+    });
+
+    // if the field does not exist
+    const targetField = formDataCopy.find((elm) => elm.fieldId == fieldId);
+    if (!targetField) {
+      const newField = {
+        fieldId: fieldId,
+        response: [value],
+      };
+      modFormData.push(newField);
+    }
+
+    setFormData(modFormData);
+  };
+
+  const handleSubmit = () => {
+    submitForm(id, formData);
+  };
 
   return (
     <div className="fill-wrap">
@@ -64,7 +110,7 @@ const Fill = () => {
                     <div>
                       {elm.label}
                       <span className={elm.isRequired ? "req" : "not-req"}>
-                        {"  *"}
+                        {/* {"  *"} */}
                       </span>
                     </div>
                     <input
@@ -72,6 +118,10 @@ const Fill = () => {
                       id={elm.fieldId}
                       placeholder={elm.placeholder}
                       required={elm.isRequired}
+                      onChange={(e) =>
+                        //  console.log(elm?.fieldId, e.target.value)
+                        handleChange(elm?.fieldId, e.target.value)
+                      }
                     />
                   </label>
                 </div>
@@ -80,7 +130,7 @@ const Fill = () => {
           </div>
         </>
       )}
-      <button>Submit</button>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 };

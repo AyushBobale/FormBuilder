@@ -29,6 +29,14 @@ export const formApi = createApi({
       query: (id) => `/form/${id}`,
       providesTags: ["forms", "id"],
     }),
+    submitForm: builder.mutation({
+      query: (id, body) => ({
+        url: `/form/response/${id}`,
+        method: "POST",
+        body: body,
+      }),
+      invalidatesTags: ["forms", "id"],
+    }),
   }),
 });
 
@@ -37,4 +45,5 @@ export const {
   useGetFormsQuery,
   useGetFormIdQuery,
   useDeleteFromMutation,
+  useSubmitFormMutation,
 } = formApi;
