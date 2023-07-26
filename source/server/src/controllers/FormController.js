@@ -1,7 +1,32 @@
 import {
   createFormService,
+  deleteFormService,
   getAllFormsService,
+  getFormByIdService,
 } from "../../service/FormService.js";
+
+const getFormByIdController = async (req, res, next) => {
+  try {
+    const form = await getFormByIdService(req.params?.id);
+    if (form) {
+      return res.status(200).json({
+        success: true,
+        message: "Form found",
+        errors: [],
+        data: { form: form },
+      });
+    }
+
+    return res.status(400).json({
+      success: false,
+      message: "Could not get form",
+      errors: [],
+      data: { form: {} },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 const getAllFormsController = async (req, res, next) => {
   try {
@@ -61,6 +86,22 @@ const editFormController = async (req, res, next) => {
 };
 const deleteFormController = async (req, res, next) => {
   try {
+    const form = await deleteFormService(req.params?.id);
+    if (form) {
+      return res.status(200).json({
+        success: true,
+        message: "Form found",
+        errors: [],
+        data: { form: form },
+      });
+    }
+
+    return res.status(400).json({
+      success: false,
+      message: "Could not get form",
+      errors: [],
+      data: { form: {} },
+    });
   } catch (error) {
     next(error);
   }
@@ -71,4 +112,5 @@ export {
   editFormController,
   deleteFormController,
   getAllFormsController,
+  getFormByIdController,
 };

@@ -4,7 +4,7 @@ import { BASE_URL } from "../../config";
 
 export const formApi = createApi({
   reducerPath: "formApi",
-  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL, credentials: "include" }),
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
     createForm: builder.mutation({
       query: (body) => ({
@@ -14,34 +14,27 @@ export const formApi = createApi({
       }),
       invalidatesTags: ["forms"],
     }),
-    getForms: builder.query({
-      query: (test) => "/form",
-      providesTags: (result) => {
-        console.log(result);
-        return [result];
-      },
+    deleteFrom: builder.mutation({
+      query: (id) => ({
+        url: `/form/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["forms", "id"],
     }),
-    // userData: builder.query({
-    //   query: () => "/auth/user_data",
-    //   providesTags: ["user", "login"],
-    // }),
-    // login: builder.mutation({
-    //   query: (body) => ({
-    //     url: "/auth/login",
-    //     method: "POST",
-    //     body: body,
-    //   }),
-    //   invalidatesTags: ["user", "login"],
-    // }),
-    // register: builder.mutation({
-    //   query: (body) => ({
-    //     url: "/auth/register",
-    //     method: "POST",
-    //     body: body,
-    //   }),
-    //   invalidatesTags: ["user", "login"],
-    // }),
+    getForms: builder.query({
+      query: () => "/form",
+      providesTags: ["forms"],
+    }),
+    getFormId: builder.query({
+      query: (id) => `/form/${id}`,
+      providesTags: ["forms", "id"],
+    }),
   }),
 });
 
-export const { useCreateFormMutation, useGetFormsQuery } = formApi;
+export const {
+  useCreateFormMutation,
+  useGetFormsQuery,
+  useGetFormIdQuery,
+  useDeleteFromMutation,
+} = formApi;

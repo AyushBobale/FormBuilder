@@ -46,8 +46,7 @@ const initialState = {
         type: "",
         isRequired: false,
       },
-      formHeaderImage:
-        "https://www.freewebheaders.com/wp-content/gallery/abstract-size-800x200/cache/gray-red-feathers-abstract-art-header-800x200.jpg-nggid0511676-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg",
+      formHeaderImage: "",
       fields: [],
     },
   },

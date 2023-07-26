@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useCreateFormMutation } from "../../redux/slices/formApi";
+import { useServerStatusQuery } from "../../redux/slices/rootApi";
 
 export const Home = () => {
   const dispatch = useDispatch();

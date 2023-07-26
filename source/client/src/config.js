@@ -1,9 +1,9 @@
 export const ROUTES = {
   ROOT: "/",
-  EDIT: "/edit/:id",
-  PREVIEW: "/preview/:id",
-  FILL: "/fill/:id",
-  RESPONSES: "/responses/:id",
+  EDIT: (id) => `/edit/${id}`,
+  PREVIEW: (id) => `/preview/${id}`,
+  FILL: (id) => `/fill/${id}`,
+  RESPONSES: (id) => `/responses/${id}`,
   FORMS: "/forms",
 };
 

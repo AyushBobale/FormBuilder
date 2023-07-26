@@ -8,8 +8,39 @@
   gap: 10px;
 }
 
-.forms-row {
+.forms-row,
+.forms-row-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
+  border: 1px solid var(--accent-two);
+}
+
+.forms-row button {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px 10px;
+  color: var(--accent-three);
+  background-color: var(--accent-one);
+  border: none;
+  border-radius: 5px;
+}
+
+.forms-row button:hover {
+  background-color: var(--accent-two);
+}
+
+.forms-row-head > *,
+.forms-row > * {
+  width: 20%;
+}
+
+.forms-row a {
+  text-decoration: none;
+  color: var(--accent-three);
+}
+
+.forms-row-head p {
+  font-weight: 600;
 }

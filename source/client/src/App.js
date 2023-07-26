@@ -7,6 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 
+import Fill from "./pages/Fill/Fill";
 import Forms from "./pages/Forms/Forms";
 import { Home } from "./pages/Home/Home";
 import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
@@ -20,10 +21,10 @@ function App() {
         <Route path={ROUTES.ROOT} element={<UserLayout />}>
           <Route path={ROUTES.ROOT} element={<Home />} />
           <Route path={ROUTES.FORMS} element={<Forms />} />
-          <Route path={ROUTES.EDIT} element={<Home />} />
-          <Route path={ROUTES.PREVIEW} element={<Home />} />
-          <Route path={ROUTES.FILL} element={<Home />} />
-          <Route path={ROUTES.RESPONSES} element={<Home />} />
+          <Route path={ROUTES.FILL(":id")} element={<Fill />} />
+          <Route path={ROUTES.EDIT(":id")} element={<Home />} />
+          <Route path={ROUTES.PREVIEW(":id")} element={<Home />} />
+          <Route path={ROUTES.RESPONSES(":id")} element={<Home />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
