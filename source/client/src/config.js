@@ -6,3 +6,5 @@ export const ROUTES = {
   RESPONSES: "/responses/:id",
   FORMS: "/forms",
 };
+
+export const BASE_URL = "http://localhost:5000";

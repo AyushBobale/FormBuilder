@@ -1,21 +1,26 @@
 import "./Home.css";
 
+import React, { useEffect } from "react";
+import {
+  editField,
+  moveFieldDown,
+  moveFieldUp,
+  removeField,
+} from "../../redux/slices/formSlice";
 import {
   faArrowDown,
   faArrowUp,
   faPenToSquare,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
-import { moveFieldDown, moveFieldUp } from "../../redux/slices/formSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import { useCreateFormMutation } from "../../redux/slices/formApi";
 
 export const Home = () => {
   const dispatch = useDispatch();
   const formData = useSelector((state) => state?.rootReducer?.form?.data?.form);
-  console.log(formData);
-
   const inputTypes = useSelector(
     (state) => state?.rootReducer?.form?.data?.types
   );
@@ -25,6 +30,12 @@ export const Home = () => {
   };
   const handleDownArrow = (elm, idx) => {
     dispatch(moveFieldDown({ idx: idx, elm: elm }));
+  };
+  const handleEdit = (idx) => {
+    dispatch(editField(idx));
+  };
+  const handleRemove = (idx) => {
+    dispatch(removeField(idx));
   };
 
   return (
@@ -55,7 +66,18 @@ export const Home = () => {
                       handleUpArrow(elm, idx);
                     }}
                   />
-                  <FontAwesomeIcon icon={faPenToSquare} />
+                  <FontAwesomeIcon
+                    icon={faPenToSquare}
+                    onClick={() => {
+                      handleEdit(idx);
+                    }}
+                  />
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    onClick={() => {
+                      handleRemove(idx);
+                    }}
+                  />
                 </div>
                 <label htmlFor={elm.fieldId}>
                   {elm.image && (

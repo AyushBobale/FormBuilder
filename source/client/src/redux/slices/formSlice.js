@@ -37,6 +37,15 @@ const initialState = {
       // submit: "submit",
     },
     form: {
+      formName: "",
+      fieldEdited: {
+        fieldId: "",
+        label: "",
+        placeholder: "",
+        image: "",
+        type: "",
+        isRequired: false,
+      },
       formHeaderImage:
         "https://www.freewebheaders.com/wp-content/gallery/abstract-size-800x200/cache/gray-red-feathers-abstract-art-header-800x200.jpg-nggid0511676-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg",
       fields: [],
@@ -55,8 +64,6 @@ const dataSlice = createSlice({
     addField: (state, { payload }) => {
       state.data.form.fields = [...state.data.form.fields, payload];
     },
-    removeField: (state, { payload }) => {},
-    editField: (state, { payload }) => {},
     moveFieldUp: (state, { payload }) => {
       const fromIndex = payload.idx;
       const toIndex = Math.max(0, fromIndex - 1);
@@ -69,6 +76,55 @@ const dataSlice = createSlice({
       const elm = state.data.form.fields.splice(fromIndex, 1)[0];
       state.data.form.fields.splice(toIndex, 0, elm);
     },
+    editField: (state, { payload }) => {
+      state.data.form.fieldEdited = state.data.form.fields[payload];
+    },
+    removeField: (state, { payload }) => {
+      const elm = state.data.form.fields.splice(payload, 1)[0];
+      if (elm?.fieldId == state.data.form.fieldEdited.fieldId) {
+        state.data.form.fieldEdited = {
+          fieldId: "",
+          label: "",
+          placeholder: "",
+          image: "",
+          type: "",
+          isRequired: false,
+        };
+      }
+    },
+    discardEditChanges: (state, { payload }) => {
+      state.data.form.fieldEdited = {
+        fieldId: "",
+        label: "",
+        placeholder: "",
+        image: "",
+        type: "",
+        isRequired: false,
+      };
+    },
+    saveEditChanges: (state, { payload }) => {
+      const index = state.data.form.fields
+        .map((elm) => elm.fieldId)
+        .indexOf(state.data.form.fieldEdited.fieldId);
+      state.data.form.fields[index] = state.data.form.fieldEdited;
+      state.data.form.fieldEdited = {
+        fieldId: "",
+        label: "",
+        placeholder: "",
+        image: "",
+        type: "",
+        isRequired: false,
+      };
+    },
+    handleEditChange: (state, { payload }) => {
+      state.data.form.fieldEdited = {
+        ...state.data.form.fieldEdited,
+        ...payload,
+      };
+    },
+    changeFormName: (state, { payload }) => {
+      state.data.form.formName = payload;
+    },
   },
 });
 
@@ -80,4 +136,8 @@ export const {
   editField,
   moveFieldDown,
   moveFieldUp,
+  discardEditChanges,
+  saveEditChanges,
+  handleEditChange,
+  changeFormName,
 } = dataSlice.actions;

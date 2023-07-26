@@ -16,12 +16,12 @@ const FormSchema = new mongoose.Schema({
   fields: { type: [FieldData], default: [] },
 });
 
-const FormResponseSchema = new mongoose.Schema({
-  formName: { type: String, required: true },
-  fields: { type: [FieldData], default: [] },
-});
+// const FormResponseSchema = new mongoose.Schema({
+//   formName: { type: String, required: true },
+//   fields: { type: [FieldData], default: [] },
+// });
 
 const FormModel = mongoose.model("Form", FormSchema);
-const FormResponseModel = mongoose.model("FormResponse", FormResponseSchema);
+// const FormResponseModel = mongoose.model("FormResponse", FormResponseSchema);
 
-export { FormModel, FormResponseModel };
+export { FormModel };

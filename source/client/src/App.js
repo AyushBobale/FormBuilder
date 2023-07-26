@@ -7,6 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 
+import Forms from "./pages/Forms/Forms";
 import { Home } from "./pages/Home/Home";
 import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 import { ROUTES } from "./config";
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path={ROUTES.ROOT} element={<UserLayout />}>
           <Route path={ROUTES.ROOT} element={<Home />} />
+          <Route path={ROUTES.FORMS} element={<Forms />} />
           <Route path={ROUTES.EDIT} element={<Home />} />
           <Route path={ROUTES.PREVIEW} element={<Home />} />
           <Route path={ROUTES.FILL} element={<Home />} />

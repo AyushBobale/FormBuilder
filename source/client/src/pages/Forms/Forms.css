@@ -1,0 +1,15 @@
+.forms-wrapper h2 {
+  margin-bottom: 15px;
+}
+
+.forms-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.forms-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -7,6 +7,10 @@
   font-size: 15px;
 }
 
+.sidebar h3 {
+  margin-bottom: 10px;
+}
+
 .sidebar > p {
   display: flex;
   flex-direction: column;
@@ -42,4 +46,24 @@
 
 .sidebar input[type="file"] {
   display: none;
+}
+
+.edit-field {
+  padding: 20px 0px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.edit-field > span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edit-field > span > button {
+  width: 45%;
 }
