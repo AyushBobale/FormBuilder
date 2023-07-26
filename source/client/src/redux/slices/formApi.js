@@ -35,7 +35,11 @@ export const formApi = createApi({
         method: "POST",
         body: body,
       }),
-      invalidatesTags: ["forms", "id"],
+      invalidatesTags: ["forms", "id", "responses"],
+    }),
+    getFormResponses: builder.query({
+      query: (id) => `/form/response/${id}`,
+      providesTags: ["forms", "responses"],
     }),
   }),
 });
@@ -46,4 +50,5 @@ export const {
   useGetFormIdQuery,
   useDeleteFromMutation,
   useSubmitFormMutation,
+  useGetFormResponsesQuery,
 } = formApi;

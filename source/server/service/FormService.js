@@ -28,10 +28,17 @@ const handleFormResponseService = async (formId, response) => {
   });
 };
 
+const getFormResponsesService = async (formId) => {
+  const form = await FormModel.findById(formId);
+  const responses = await FormResponseModel.find({ formId: formId });
+  return { form, responses };
+};
+
 export {
   createFormService,
   getAllFormsService,
   deleteFormService,
   getFormByIdService,
   handleFormResponseService,
+  getFormResponsesService,
 };

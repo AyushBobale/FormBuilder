@@ -1,0 +1,32 @@
+.response-wrap {
+}
+
+.response-wrap h2 {
+  margin-bottom: 20px;
+}
+
+.response-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.response-row,
+.response-row-header {
+  gap: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--accent-two);
+}
+
+.response-row-header > * {
+  font-weight: 600;
+}
+
+.response-row > *,
+.response-row-header > * {
+  width: 100%;
+}

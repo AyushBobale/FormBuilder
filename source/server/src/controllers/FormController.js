@@ -3,6 +3,7 @@ import {
   deleteFormService,
   getAllFormsService,
   getFormByIdService,
+  getFormResponsesService,
   handleFormResponseService,
 } from "../../service/FormService.js";
 
@@ -134,6 +135,29 @@ const handleFormResponseController = async (req, res, next) => {
   }
 };
 
+const getFormResponesesController = async (req, res, next) => {
+  try {
+    const form = await getFormResponsesService(req.params?.id);
+    if (form) {
+      return res.status(200).json({
+        success: true,
+        message: "Form found",
+        errors: [],
+        data: form,
+      });
+    }
+
+    return res.status(400).json({
+      success: false,
+      message: "Could not get form",
+      errors: [],
+      data: {},
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export {
   createFormController,
   editFormController,
@@ -141,4 +165,5 @@ export {
   getAllFormsController,
   getFormByIdController,
   handleFormResponseController,
+  getFormResponesesController,
 };

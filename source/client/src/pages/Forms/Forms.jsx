@@ -30,7 +30,7 @@ const Forms = () => {
               <p>{idx + 1}.</p>
               <p>{elm?.formName}</p>
               <button>
-                <Link to={ROUTES.FILL(elm?._id)}>Responses</Link>
+                <Link to={ROUTES.RESPONSES(elm?._id)}>Responses</Link>
               </button>
               <button>
                 <Link to={ROUTES.FILL(elm?._id)}>Fill</Link>
