@@ -6,9 +6,12 @@ import {
   useGetFormIdQuery,
   useSubmitFormMutation,
 } from "../../redux/slices/formApi";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+
+import { ROUTES } from "../../config";
 
 const Fill = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const { data, isLoading, error, isSuccess } = useGetFormIdQuery(id);
   const [submitForm, results] = useSubmitFormMutation();
@@ -57,6 +60,10 @@ const Fill = () => {
   const handleSubmit = () => {
     submitForm({ id: id, body: { fields: formData } });
   };
+
+  useEffect(() => {
+    if (results.data?.success) navigate(ROUTES.RESPONSES(id));
+  }, [results.data]);
 
   return (
     <div className="fill-wrap">

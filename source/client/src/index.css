@@ -17,6 +17,7 @@
   padding: 0;
   box-sizing: border-box;
   scrollbar-width: thin;
+  transition: all 0.3s ease-out;
 }
 
 html,
@@ -73,11 +74,32 @@ nav a {
   padding: 20px;
 }
 
-.content-wrap {
+.sidebar-wrap-hidden {
+  width: var(--sidebar-widh);
+  max-height: calc(100vh - var(--nav-height));
+  position: fixed;
+  overflow-y: scroll;
+  top: var(--nav-height);
+  left: 0;
+  bottom: 0;
+  /* border-right: 1px solid var(--accent-three); */
+  box-shadow: 0px 0px 25px -12px var(--accent-three);
+  z-index: 90;
+  background-color: var(--primary-bg);
+  padding: 20px;
+  left: calc(-1 * var(--sidebar-widh));
+}
+
+.content-wrap,
+.content-wrap-full {
   max-height: calc(100vh - var(--nav-height));
   margin-left: var(--sidebar-widh);
   margin-top: var(--nav-height);
   overflow-y: scroll;
+}
+
+.content-wrap-full {
+  margin-left: 0;
 }
 
 .content {

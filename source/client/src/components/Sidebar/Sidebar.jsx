@@ -1,6 +1,6 @@
 import "./Sidebar.css";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   addField,
   changeFormName,
@@ -10,10 +10,13 @@ import {
   setHeaderImage,
 } from "../../redux/slices/formSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router";
 
+import { ROUTES } from "../../config";
 import { useCreateFormMutation } from "../../redux/slices/formApi";
 
 const Sidebar = () => {
+  const location = useLocation();
   const [count, setCount] = useState(0);
   const dispatch = useDispatch();
   const [createFrom, result] = useCreateFormMutation();
@@ -63,8 +66,17 @@ const Sidebar = () => {
     });
   };
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (result.data?.success) navigate(ROUTES.FORMS);
+  }, [result.data]);
+
   return (
-    <div className="sidebar-wrap">
+    <div
+      className={
+        location.pathname == "/" ? "sidebar-wrap" : "sidebar-wrap-hidden"
+      }
+    >
       <div className="sidebar">
         <p>
           <label htmlFor="header-img">Form Name</label>
