@@ -6,6 +6,7 @@ import {
   changeFormName,
   discardEditChanges,
   handleEditChange,
+  resetForm,
   saveEditChanges,
   setHeaderImage,
 } from "../../redux/slices/formSlice";
@@ -68,7 +69,10 @@ const Sidebar = () => {
 
   const navigate = useNavigate();
   useEffect(() => {
-    if (result.data?.success) navigate(ROUTES.FORMS);
+    if (result.data?.success) {
+      navigate(ROUTES.FORMS);
+      dispatch(resetForm());
+    }
   }, [result.data]);
 
   return (

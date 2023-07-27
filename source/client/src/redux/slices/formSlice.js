@@ -124,6 +124,11 @@ const dataSlice = createSlice({
     changeFormName: (state, { payload }) => {
       state.data.form.formName = payload;
     },
+    resetForm: (state, { payload }) => {
+      state.data.form.formHeaderImage = "";
+      state.data.form.formName = "";
+      state.data.form.fields = [];
+    },
   },
 });
 
@@ -139,4 +144,5 @@ export const {
   saveEditChanges,
   handleEditChange,
   changeFormName,
+  resetForm,
 } = dataSlice.actions;
