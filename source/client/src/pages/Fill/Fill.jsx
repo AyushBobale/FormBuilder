@@ -55,7 +55,7 @@ const Fill = () => {
   };
 
   const handleSubmit = () => {
-    submitForm(id, formData);
+    submitForm({ id: id, body: { fields: formData } });
   };
 
   return (

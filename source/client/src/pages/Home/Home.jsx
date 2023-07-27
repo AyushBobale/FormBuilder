@@ -42,6 +42,7 @@ export const Home = () => {
   return (
     <>
       <div className="form-wrap">
+        <h2>Create Form</h2>
         <div className="form">
           {formData?.formHeaderImage && (
             <div className="header-img">

@@ -25,8 +25,8 @@ const Responses = () => {
               return (
                 <div className="response-row">
                   <p>{idx + 1}.</p>
-                  {data?.data?.form?.fields?.map((elmInner, idx) => {
-                    return <p>{JSON.stringify(elm)}</p>;
+                  {elm?.map((elmInner, idx) => {
+                    return <p>{elmInner?.[0]}</p>;
                   })}
                 </div>
               );
@@ -39,3 +39,10 @@ const Responses = () => {
 };
 
 export default Responses;
+
+/*
+Manage data in the backend 
+minimal changes in the frontednd are needed
+after taking a reponse redirect the user so that the same form is not filled again
+
+ */

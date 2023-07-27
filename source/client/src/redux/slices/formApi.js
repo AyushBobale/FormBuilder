@@ -30,10 +30,10 @@ export const formApi = createApi({
       providesTags: ["forms", "id"],
     }),
     submitForm: builder.mutation({
-      query: (id, body) => ({
-        url: `/form/response/${id}`,
+      query: (data) => ({
+        url: `/form/response/${data.id}`,
         method: "POST",
-        body: body,
+        body: data.body,
       }),
       invalidatesTags: ["forms", "id", "responses"],
     }),

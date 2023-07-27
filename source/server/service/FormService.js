@@ -30,8 +30,22 @@ const handleFormResponseService = async (formId, response) => {
 
 const getFormResponsesService = async (formId) => {
   const form = await FormModel.findById(formId);
+  const formJson = JSON.parse(JSON.stringify(form));
+  const fieldMapper = {};
+  formJson.fields.forEach((element, idx) => {
+    fieldMapper[element["fieldId"]] = idx;
+  });
   const responses = await FormResponseModel.find({ formId: formId });
-  return { form, responses };
+  const responseJson = JSON.parse(JSON.stringify(responses));
+  const responseFormatted = [];
+  responseJson.forEach((elm, idx) => {
+    const temp = [];
+    elm.fields.forEach((resp, idx) => {
+      temp[fieldMapper[resp.fieldId]] = resp.response;
+    });
+    responseFormatted.push(temp);
+  });
+  return { form, responses: responseFormatted };
 };
 
 export {
