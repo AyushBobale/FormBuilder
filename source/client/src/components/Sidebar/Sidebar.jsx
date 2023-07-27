@@ -122,6 +122,15 @@ const Sidebar = () => {
                 handleEdit({ placeholder: e.target.value });
               }}
             />
+            <label htmlFor="image">Question Image</label>
+            <input
+              type="text"
+              id="image"
+              value={editData?.image}
+              onChange={(e) => {
+                handleEdit({ image: e.target.value });
+              }}
+            />
             <span>
               <button onClick={handleSave}>Save</button>
               <button onClick={handleDiscard}>Discard</button>

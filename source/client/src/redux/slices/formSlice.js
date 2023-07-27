@@ -29,7 +29,7 @@ const initialState = {
       // month: "month",
       // week: "week",
       // ----------------------------
-      button: { value: "button", name: "Button" },
+      // button: { value: "button", name: "Button" },
       // checkbox: "checkbox",
       // radio: "radio",
       // range: "range",

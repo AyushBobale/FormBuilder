@@ -72,8 +72,8 @@
   display: flex;
   gap: 10px;
   position: absolute;
-  right: 30px;
-  top: 30px;
+  right: 10px;
+  top: 10px;
 }
 
 .controls > svg {
