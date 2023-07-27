@@ -36,6 +36,8 @@ const Help = () => {
           A seperate menu opens on the sidebar after making changes click on
           save to save or discard to discard
         </li>
+      </ul>
+      <ul>
         <h2>Viewing forms and responses</h2>
         <li>
           Click on view forms on the navbar you will see the list of all forms{" "}
