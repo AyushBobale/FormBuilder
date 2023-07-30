@@ -7,6 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 
+import DragAndDrop from "./pages/DragAndDrop/DragAndDrop";
 import Fill from "./pages/Fill/Fill";
 import Forms from "./pages/Forms/Forms";
 import Help from "./pages/Help/Help";
@@ -28,6 +29,7 @@ function App() {
           <Route path={ROUTES.ABOUT} element={<Help />} />
           <Route path={ROUTES.EDIT(":id")} element={<Home />} />
           <Route path={ROUTES.PREVIEW(":id")} element={<Home />} />
+          <Route path={ROUTES.DRAG_AND_DROP} element={<DragAndDrop />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
