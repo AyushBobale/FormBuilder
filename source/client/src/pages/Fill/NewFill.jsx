@@ -13,7 +13,14 @@ const ReturnQuestion = (type, idx, data) => {
     case "CAT":
       return <CatQue question={data?.question} idx={idx} />;
     case "FILL":
-      return <FillUpQue question={data?.question} idx={idx} />;
+      return (
+        <FillUpQue
+          options={data?.data?.options}
+          sentence={data?.data?.sentence}
+          question={data?.question}
+          idx={idx}
+        />
+      );
     case "COMP":
       return (
         <CompQue

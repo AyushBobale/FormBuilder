@@ -9,8 +9,6 @@ const CompQue = ({ compPassage, compQuestions, question, idx }) => {
     setAnswers({ ...answers, [idx]: value });
   };
 
-  console.log(answers);
-
   return (
     <div className="comp-que">
       <h3>Comprehension Question</h3>
