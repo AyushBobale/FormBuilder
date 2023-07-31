@@ -77,6 +77,12 @@ const handleFormResponseNService = async (formId, response) => {
   });
 };
 
+const getFormResponseNService = async (formId) => {
+  const responses = await NewFormResponseModel.find({ formId: formId });
+  const form = await NewFormModel.findById(formId);
+  return { responses, form };
+};
+
 // End New services -----------------------------------------------
 
 export {
@@ -92,4 +98,5 @@ export {
   getFormByIdNService,
   deleteFormNService,
   handleFormResponseNService,
+  getFormResponseNService,
 };

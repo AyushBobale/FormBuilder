@@ -79,10 +79,10 @@ export const formApiNew = createApi({
       }),
       invalidatesTags: ["forms", "id", "responses"],
     }),
-    // getFormResponses: builder.query({
-    //   query: (id) => `/form/response/${id}`,
-    //   providesTags: ["forms", "responses"],
-    // }),
+    getFormResponsesNew: builder.query({
+      query: (id) => `/form/response/${id}`,
+      providesTags: ["forms", "responses"],
+    }),
   }),
 });
 
@@ -101,4 +101,5 @@ export const {
   useGetFormIdNewQuery,
   useDeleteFromNewMutation,
   useSubmitFormNewMutation,
+  useGetFormResponsesNewQuery,
 } = formApiNew;
