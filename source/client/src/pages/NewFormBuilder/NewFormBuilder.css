@@ -1,0 +1,12 @@
+.new-form-wrap,
+.new-form {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.que-wrap {
+  padding: 10px;
+  border: 1px solid var(--accent-two);
+  border-radius: 5px;
+}

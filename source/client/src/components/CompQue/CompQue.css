@@ -1,0 +1,15 @@
+.comp-que {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.mcqs,
+.mcq-que {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  padding: 5px;
+  border: 1px solid var(--accent-two);
+  border-radius: 5px;
+}
