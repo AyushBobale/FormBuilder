@@ -46,7 +46,7 @@ export const formApi = createApi({
 
 export const formApiNew = createApi({
   reducerPath: "formApiNew",
-  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL + "/new" }),
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL + "/v1" }),
   endpoints: (builder) => ({
     createFormNew: builder.mutation({
       query: (body) => ({

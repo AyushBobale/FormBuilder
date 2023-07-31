@@ -1,5 +1,6 @@
 import { FormModel } from "../src/models/FormModel.js";
 import { FormResponseModel } from "../src/models/FormResponseMode.js";
+import { NewFormModel } from "../src/models/NewFormModel.js";
 
 const getFormByIdService = async (id) => {
   return await FormModel.findById(id);
@@ -50,7 +51,7 @@ const getFormResponsesService = async (formId) => {
 
 // New services -----------------------------------------------
 const createFormNService = async (data) => {
-  return;
+  return await NewFormModel.create(data);
 };
 // End New services -----------------------------------------------
 

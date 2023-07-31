@@ -41,7 +41,7 @@ import mongoose from "mongoose";
 
 // question stuff
 const FromQuestionSchema = new mongoose.Schema({
-  queType: {
+  type: {
     type: String,
     enum: ["CAT", "FILL", "COMP"],
     required: true,

@@ -30,7 +30,7 @@ app.get("/", (req, res, next) => {
 
 // Routers
 app.use("/form", FormRouter);
-app.use("/form/new", FormRouterNew);
+app.use("/v1/form", FormRouterNew);
 // error logging and handling
 app.use(errorHandler);
 
