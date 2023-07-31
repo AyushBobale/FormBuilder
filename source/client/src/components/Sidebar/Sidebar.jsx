@@ -128,6 +128,12 @@ const Sidebar = () => {
       questions: formDataNew?.questions,
     });
   };
+
+  useEffect(() => {
+    if (newResults.isSuccess) {
+      navigate(ROUTES.NEW_FORMS);
+    }
+  }, [newResults.isLoading]);
   //-----------------------------------------------------------------------------
 
   if (location.pathname == ROUTES.NEW_FORM_BUILDER) {

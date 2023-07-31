@@ -201,7 +201,7 @@ const ComprehensionBuilder = ({ idx }) => {
                   <div className="option">
                     <span
                       className={
-                        rightAnswer == optIdx
+                        elm?.rightOpt == optIdx
                           ? "option-circle selected"
                           : "option-circle"
                       }
