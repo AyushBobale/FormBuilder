@@ -37,7 +37,14 @@ const initialState = {
 
   }
    */
-  data: { questions: [], formName: "Change Form Name" },
+  data: {
+    questions: [],
+    formName: "Change Form Name",
+    submitData: {
+      formId: "",
+      responses: [],
+    },
+  },
   status: {},
 };
 
@@ -122,6 +129,13 @@ const newFormSlice = createSlice({
       };
       state.data.questions.splice(payload.idx, 1, modQue);
     },
+    // submit redicers
+    changeFormId: (state, { payload }) => {
+      state.data.submitData.formId = payload;
+    },
+    editAnswer: (state, { payload }) => {
+      state.data.submitData.responses[payload.idx] = payload.data;
+    },
   },
 });
 
@@ -136,4 +150,6 @@ export const {
   FILLAddOption,
   COMPPassageChange,
   COMPAddQue,
+  changeFormId,
+  editAnswer,
 } = newFormSlice.actions;

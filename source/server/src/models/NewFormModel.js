@@ -30,12 +30,17 @@ import mongoose from "mongoose";
 
   as for responses {
     for CAT
-    answers: [{ans: cat}]
+    answers: {cat: [ans], ....}
     we can match this against the data stored in the database
+    says what categories have what items
 
     for FILL
-    answers: [Number] // returned array of index
-    we can match this against the 
+    answers: [{text: "abbc", idx : 1}, {text: "def", idx : 4}] 
+    says what text appears at what index
+
+    for COMP
+    answers: {key, value} // returns the choosen index of the answer
+    where key is question number and value is option number
   }
    */
 

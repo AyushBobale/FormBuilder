@@ -1,0 +1,125 @@
+Date : 2023-07-31 16:40:31
+Directory : c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code
+Total : 59 files,  22054 codes, 173 comments, 413 blanks, all 22640 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JSON           |          5 |     19,070 |          0 |          5 |     19,075 |
+| JavaScript JSX |         18 |      1,329 |         40 |        148 |      1,517 |
+| JavaScript     |         18 |        972 |        101 |        116 |      1,189 |
+| CSS            |         15 |        614 |          9 |         99 |        722 |
+| Markdown       |          2 |         49 |          0 |         44 |         93 |
+| HTML           |          1 |         20 |         23 |          1 |         44 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                         |         59 |     22,054 |        173 |        413 |     22,640 |
+| . (Files)                                                                                                                 |          1 |         11 |          0 |         11 |         22 |
+| source                                                                                                                    |         58 |     22,043 |        173 |        402 |     22,618 |
+| source\client                                                                                                             |         47 |     20,279 |        118 |        322 |     20,719 |
+| source\client (Files)                                                                                                     |          3 |     17,814 |          0 |         35 |     17,849 |
+| source\client\public                                                                                                      |          2 |         45 |         23 |          2 |         70 |
+| source\client\src                                                                                                         |         42 |      2,420 |         95 |        285 |      2,800 |
+| source\client\src (Files)                                                                                                 |          5 |        237 |          8 |         32 |        277 |
+| source\client\src\components                                                                                              |         11 |        600 |          3 |         75 |        678 |
+| source\client\src\components\CatQue                                                                                       |          4 |        119 |          0 |         20 |        139 |
+| source\client\src\components\CompQue                                                                                      |          2 |         60 |          0 |          8 |         68 |
+| source\client\src\components\FillUpQue                                                                                    |          2 |        112 |          0 |         16 |        128 |
+| source\client\src\components\Navbar                                                                                       |          1 |         21 |          0 |          3 |         24 |
+| source\client\src\components\Sidebar                                                                                      |          2 |        288 |          3 |         28 |        319 |
+| source\client\src\pages                                                                                                   |         20 |      1,180 |         39 |        152 |      1,371 |
+| source\client\src\pages\DragAndDrop                                                                                       |          2 |         65 |          0 |         12 |         77 |
+| source\client\src\pages\Fill                                                                                              |          3 |        198 |         30 |         26 |        254 |
+| source\client\src\pages\Forms                                                                                             |          3 |        114 |          0 |         25 |        139 |
+| source\client\src\pages\Help                                                                                              |          2 |         59 |          0 |          8 |         67 |
+| source\client\src\pages\Home                                                                                              |          2 |        172 |          3 |         18 |        193 |
+| source\client\src\pages\Layouts                                                                                           |          1 |         26 |          0 |          3 |         29 |
+| source\client\src\pages\Layouts\User                                                                                      |          1 |         26 |          0 |          3 |         29 |
+| source\client\src\pages\NewFormBuilder                                                                                    |          2 |        408 |          0 |         37 |        445 |
+| source\client\src\pages\NewFormRenderer                                                                                   |          2 |         69 |          0 |         10 |         79 |
+| source\client\src\pages\PageNotFound                                                                                      |          1 |          4 |          0 |          2 |          6 |
+| source\client\src\pages\Responses                                                                                         |          2 |         65 |          6 |         11 |         82 |
+| source\client\src\redux                                                                                                   |          6 |        403 |         45 |         26 |        474 |
+| source\client\src\redux (Files)                                                                                           |          1 |         24 |          0 |          4 |         28 |
+| source\client\src\redux\slices                                                                                            |          5 |        379 |         45 |         22 |        446 |
+| source\server                                                                                                             |         11 |      1,764 |         55 |         80 |      1,899 |
+| source\server (Files)                                                                                                     |          3 |      1,297 |          5 |          9 |      1,311 |
+| source\server\service                                                                                                     |          1 |         75 |          3 |         14 |         92 |
+| source\server\src                                                                                                         |          7 |        392 |         47 |         57 |        496 |
+| source\server\src\controllers                                                                                             |          1 |        282 |          3 |         28 |        313 |
+| source\server\src\db                                                                                                      |          1 |         11 |          0 |          3 |         14 |
+| source\server\src\middlewares                                                                                             |          1 |         13 |          0 |          3 |         16 |
+| source\server\src\models                                                                                                  |          3 |         57 |         44 |         17 |        118 |
+| source\server\src\routers                                                                                                 |          1 |         29 |          0 |          6 |         35 |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                                  | language       | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\readme.md                                                   | Markdown       |         11 |          0 |         11 |         22 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\README.md                                     | Markdown       |         38 |          0 |         33 |         71 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\package-lock.json                             | JSON           |     17,729 |          0 |          1 |     17,730 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\package.json                                  | JSON           |         47 |          0 |          1 |         48 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\public\index.html                             | HTML           |         20 |         23 |          1 |         44 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\public\manifest.json                          | JSON           |         25 |          0 |          1 |         26 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\App.css                                   | CSS            |          0 |          0 |          1 |          1 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\App.js                                    | JavaScript     |         44 |          0 |          5 |         49 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CatQue\CatBuilder.css          | CSS            |          0 |          0 |          1 |          1 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CatQue\CatBuilder.jsx          | JavaScript JSX |          6 |          0 |          4 |         10 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CatQue\CatQue.css              | CSS            |         46 |          0 |          6 |         52 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CatQue\CatQue.jsx              | JavaScript JSX |         67 |          0 |          9 |         76 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CompQue\CompQue.css            | CSS            |         14 |          0 |          2 |         16 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CompQue\CompQue.jsx            | JavaScript JSX |         46 |          0 |          6 |         52 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\FillUpQue\FillUpQue.css        | CSS            |         43 |          0 |          6 |         49 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\FillUpQue\FillUpQue.jsx        | JavaScript JSX |         69 |          0 |         10 |         79 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\Navbar\Navbar.jsx              | JavaScript JSX |         21 |          0 |          3 |         24 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\Sidebar\Sidebar.css            | CSS            |         65 |          1 |         11 |         77 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\Sidebar\Sidebar.jsx            | JavaScript JSX |        223 |          2 |         17 |        242 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\config.js                                 | JavaScript     |         16 |          1 |          4 |         21 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\index.css                                 | CSS            |        163 |          7 |         19 |        189 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\index.js                                  | JavaScript     |         14 |          0 |          3 |         17 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\DragAndDrop\DragAndDrop.css         | CSS            |         13 |          0 |          4 |         17 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\DragAndDrop\DragAndDrop.jsx         | JavaScript JSX |         52 |          0 |          8 |         60 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Fill\Fill.css                       | CSS            |         20 |          0 |          3 |         23 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Fill\Fill.jsx                       | JavaScript JSX |        103 |         30 |         13 |        146 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Fill\NewFill.jsx                    | JavaScript JSX |         75 |          0 |         10 |         85 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Forms\Forms.css                     | CSS            |         39 |          0 |          8 |         47 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Forms\Forms.jsx                     | JavaScript JSX |         38 |          0 |          9 |         47 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Forms\NewForms.jsx                  | JavaScript JSX |         37 |          0 |          8 |         45 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Help\Help.css                       | CSS            |          9 |          0 |          3 |         12 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Help\Help.jsx                       | JavaScript JSX |         50 |          0 |          5 |         55 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Home\Home.css                       | CSS            |         69 |          1 |         12 |         82 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Home\Home.jsx                       | JavaScript JSX |        103 |          2 |          6 |        111 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Layouts\User\UserLayout.jsx         | JavaScript JSX |         26 |          0 |          3 |         29 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\NewFormBuilder\NewFormBuilder.css   | CSS            |         94 |          0 |         15 |        109 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\NewFormBuilder\NewFormBuilder.jsx   | JavaScript JSX |        314 |          0 |         22 |        336 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\NewFormRenderer\NewFormRendere.jsx  | JavaScript JSX |         57 |          0 |          8 |         65 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\NewFormRenderer\NewFormRenderer.css | CSS            |         12 |          0 |          2 |         14 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\PageNotFound\PageNotFound.jsx       | JavaScript JSX |          4 |          0 |          2 |          6 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Responses\Response.css              | CSS            |         27 |          0 |          6 |         33 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Responses\Responses.jsx             | JavaScript JSX |         38 |          6 |          5 |         49 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\slices\dataSlice.js                 | JavaScript     |         20 |          0 |          4 |         24 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\slices\formApi.js                   | JavaScript     |         95 |          4 |          6 |        105 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\slices\formSlice.js                 | JavaScript     |        133 |         12 |          4 |        149 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\slices\newFormSlice.js              | JavaScript     |        119 |         29 |          4 |        152 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\slices\rootApi.js                   | JavaScript     |         12 |          0 |          4 |         16 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\store.js                            | JavaScript     |         24 |          0 |          4 |         28 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\index.js                                      | JavaScript     |         28 |          5 |          7 |         40 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\package-lock.json                             | JSON           |      1,246 |          0 |          1 |      1,247 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\package.json                                  | JSON           |         23 |          0 |          1 |         24 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\service\FormService.js                        | JavaScript     |         75 |          3 |         14 |         92 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\controllers\FormController.js             | JavaScript     |        282 |          3 |         28 |        313 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\db\conn.js                                | JavaScript     |         11 |          0 |          3 |         14 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\middlewares\errorHandlerMiddleware.js     | JavaScript     |         13 |          0 |          3 |         16 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\models\FormModel.js                       | JavaScript     |         17 |          0 |          5 |         22 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\models\FormResponseMode.js                | JavaScript     |         11 |          0 |          5 |         16 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\models\NewFormModel.js                    | JavaScript     |         29 |         44 |          7 |         80 |
+| c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\routers\formRouter.js                     | JavaScript     |         29 |          0 |          6 |         35 |
+| Total                                                                                                                     |                |     22,054 |        173 |        413 |     22,640 |
++---------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

@@ -1,6 +1,10 @@
+import {
+  NewFormModel,
+  NewFormResponseModel,
+} from "../src/models/NewFormModel.js";
+
 import { FormModel } from "../src/models/FormModel.js";
 import { FormResponseModel } from "../src/models/FormResponseMode.js";
-import { NewFormModel } from "../src/models/NewFormModel.js";
 
 const getFormByIdService = async (id) => {
   return await FormModel.findById(id);
@@ -66,6 +70,19 @@ const deleteFormNService = async (formId) => {
   return await NewFormModel.findByIdAndDelete(formId);
 };
 
+const handleFormResponseNService = async (formId, response) => {
+  return await NewFormResponseModel.create({
+    formId: formId,
+    answers: response,
+  });
+};
+
+const getFormResponseNService = async (formId) => {
+  const responses = await NewFormResponseModel.find({ formId: formId });
+  const form = await NewFormModel.findById(formId);
+  return { responses, form };
+};
+
 // End New services -----------------------------------------------
 
 export {
@@ -80,4 +97,6 @@ export {
   getAllFormNService,
   getFormByIdNService,
   deleteFormNService,
+  handleFormResponseNService,
+  getFormResponseNService,
 };
