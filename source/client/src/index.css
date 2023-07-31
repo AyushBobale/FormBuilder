@@ -18,6 +18,8 @@
   box-sizing: border-box;
   scrollbar-width: thin;
   transition: all 0.3s ease-out;
+  color: var(--accent-three);
+  font-family: "Montserrat", sans-serif;
 }
 
 html,
@@ -26,8 +28,8 @@ body,
 .main {
   background-color: var(--primary-bg);
   color: var(--accent-three);
-  width: 100%;
   font-family: "Montserrat", sans-serif;
+  width: 100%;
 }
 
 nav {
@@ -47,7 +49,9 @@ nav {
   background-color: var(--accent-one);
 }
 
-h3 {
+h2,
+h3,
+h4 {
   margin-bottom: 10px;
 }
 
