@@ -75,6 +75,25 @@ const Sidebar = () => {
     }
   }, [result.data]);
 
+  if (location.pathname == ROUTES.NEW_FORM_BUILDER) {
+    return (
+      <div
+        className={
+          location.pathname == ROUTES.NEW_FORM_BUILDER
+            ? "sidebar-wrap"
+            : "sidebar-wrap-hidden"
+        }
+      >
+        <div className="sidebar">
+          <h3>New Side bar</h3>
+          <p>Add Categorize Question</p>
+          <p>Add Fil up </p>
+          <p>Add Comprehension Question</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       className={

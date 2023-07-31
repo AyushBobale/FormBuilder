@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router";
 
 import Navbar from "../../../components/Navbar/Navbar";
+import { ROUTES } from "../../../config";
 import React from "react";
 import Sidebar from "../../../components/Sidebar/Sidebar";
 
@@ -12,7 +13,10 @@ export const UserLayout = () => {
       <Sidebar />
       <div
         className={
-          location.pathname == "/" ? "content-wrap" : "content-wrap-full"
+          location.pathname == "/" ||
+          location.pathname == ROUTES.NEW_FORM_BUILDER
+            ? "content-wrap"
+            : "content-wrap-full"
         }
       >
         <div className="content">
