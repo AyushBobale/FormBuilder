@@ -94,7 +94,7 @@ const Sidebar = () => {
         question: "Please edit the question",
         questionImg: "",
         data: {
-          sentence: "",
+          sentence: [],
           options: [],
         },
       })

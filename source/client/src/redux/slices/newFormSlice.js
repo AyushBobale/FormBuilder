@@ -68,7 +68,28 @@ const newFormSlice = createSlice({
       state.data.questions.splice(payload.idx, 1, modQue);
     },
     CATAddOption: (state, { payload }) => {
-      console.log(payload);
+      let modQue = state.data.questions[payload.idx];
+      modQue = {
+        ...modQue,
+        data: {
+          ...(modQue?.data || {}),
+          options: [...(modQue?.data?.options || []), payload.option],
+        },
+      };
+      state.data.questions.splice(payload.idx, 1, modQue);
+    },
+    FILLChangeSentence: (state, { payload }) => {
+      let modQue = state.data.questions[payload.idx];
+      modQue = {
+        ...modQue,
+        data: {
+          ...(modQue?.data || {}),
+          sentence: payload.sentence.split(" "),
+        },
+      };
+      state.data.questions.splice(payload.idx, 1, modQue);
+    },
+    FILLAddOption: (state, { payload }) => {
       let modQue = state.data.questions[payload.idx];
       modQue = {
         ...modQue,
@@ -89,4 +110,6 @@ export const {
   changeFromName,
   CATAddCategory,
   CATAddOption,
+  FILLChangeSentence,
+  FILLAddOption,
 } = newFormSlice.actions;
