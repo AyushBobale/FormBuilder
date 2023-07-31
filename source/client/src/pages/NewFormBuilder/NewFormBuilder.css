@@ -1,7 +1,7 @@
 .new-form-wrap,
 .new-form {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   flex-direction: column;
 }
 
@@ -9,4 +9,5 @@
   padding: 10px;
   border: 1px solid var(--accent-two);
   border-radius: 5px;
+  border-left: 10px solid var(--accent-two);
 }

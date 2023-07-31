@@ -30,7 +30,7 @@ const FillUpQue = ({ sentence, options }) => {
 
   return (
     <div className="fill-que">
-      <h3>Fill Up Que</h3>
+      <h3>Fill Up Question</h3>
       <div className="fill-options">
         {dragables.map((elm, idx) => {
           return (

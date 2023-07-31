@@ -1,5 +1,6 @@
 import "./NewFormBuilder.css";
 
+import CatQue from "../../components/CatQue/CatQue";
 import CompQue from "../../components/CompQue/CompQue";
 import FillUpQue from "../../components/FillUpQue/FillUpQue";
 import React from "react";
@@ -24,20 +25,35 @@ const NewFormBuilder = () => {
     sentence: "Fill in the blank this is option1 this is option2".split(" "),
     options: [3, 6],
   };
+
+  const catQueData = {
+    question: "This is a question",
+    cats: ["cat1", "cat2", "cat3"],
+    options: ["ans1", "ans2", "ans3", "ans4", "ans5"],
+  };
   return (
     <div className="new-form-wrap">
       <h2>New Form Builder</h2>
       <div className="new-form">
         <div className="que-wrap">
-          <CompQue
-            compPassage={compQueData.passage}
-            compQuestions={compQueData.questions}
+          <CatQue
+            cats={catQueData.cats}
+            options={catQueData.options}
+            question={catQueData.question}
           />
         </div>
+
         <div className="que-wrap">
           <FillUpQue
             sentence={fillQueData.sentence}
             options={fillQueData.options}
+          />
+        </div>
+
+        <div className="que-wrap">
+          <CompQue
+            compPassage={compQueData.passage}
+            compQuestions={compQueData.questions}
           />
         </div>
       </div>
