@@ -16,5 +16,5 @@ export const ROUTES = {
   DRAG_AND_DROP: "/drag_and_drop",
 };
 
-export const BASE_URL = "https://form-builder-app.onrender.com/";
+export const BASE_URL = "https://form-builder-app.onrender.com";
 // export const BASE_URL = "http://localhost:5000";
