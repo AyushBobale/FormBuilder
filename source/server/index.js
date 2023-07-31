@@ -1,6 +1,7 @@
 import "dotenv/config";
 
-import { FormRouter } from "./src/routers/formRouter.js";
+import { FormRouter, FormRouterNew } from "./src/routers/formRouter.js";
+
 import connectDB from "./src/db/conn.js";
 import cors from "cors";
 import errorHandler from "./src/middlewares/errorHandlerMiddleware.js";
@@ -29,6 +30,7 @@ app.get("/", (req, res, next) => {
 
 // Routers
 app.use("/form", FormRouter);
+app.use("/form/new", FormRouterNew);
 // error logging and handling
 app.use(errorHandler);
 

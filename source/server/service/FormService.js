@@ -48,6 +48,12 @@ const getFormResponsesService = async (formId) => {
   return { form, responses: responseFormatted };
 };
 
+// New services -----------------------------------------------
+const createFormNService = async (data) => {
+  return;
+};
+// End New services -----------------------------------------------
+
 export {
   createFormService,
   getAllFormsService,
@@ -55,4 +61,6 @@ export {
   getFormByIdService,
   handleFormResponseService,
   getFormResponsesService,
+  //
+  createFormNService,
 };

@@ -10,18 +10,25 @@ import {
   saveEditChanges,
   setHeaderImage,
 } from "../../redux/slices/formSlice";
+import {
+  useCreateFormMutation,
+  useCreateFormNewMutation,
+} from "../../redux/slices/formApi";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router";
 
 import { ROUTES } from "../../config";
 import { addQ } from "../../redux/slices/newFormSlice";
-import { useCreateFormMutation } from "../../redux/slices/formApi";
 
 const Sidebar = () => {
   const location = useLocation();
-  const [count, setCount] = useState(0);
   const dispatch = useDispatch();
+
+  const [count, setCount] = useState(0);
+
   const [createFrom, result] = useCreateFormMutation();
+  const [createNewForm, newResults] = useCreateFormNewMutation();
+
   const inputTypes = useSelector(
     (state) => state?.rootReducer?.form?.data?.types
   );
@@ -29,6 +36,7 @@ const Sidebar = () => {
   const editData = useSelector(
     (state) => state?.rootReducer?.form?.data?.form?.fieldEdited
   );
+  const formDataNew = useSelector((state) => state?.rootReducer?.newForm?.data);
 
   const handleHeaderImage = (e) => {
     dispatch(setHeaderImage(e.target.value));
@@ -113,6 +121,13 @@ const Sidebar = () => {
       })
     );
   };
+
+  const createForm = () => {
+    createNewForm({
+      formName: formDataNew?.formName,
+      questions: formDataNew?.questions,
+    });
+  };
   //-----------------------------------------------------------------------------
 
   if (location.pathname == ROUTES.NEW_FORM_BUILDER) {
@@ -134,6 +149,10 @@ const Sidebar = () => {
           </p>
           <p className="new-btn" onClick={addCompQue}>
             Add Comprehension Question
+          </p>
+
+          <p className="new-btn" onClick={createForm}>
+            Create Form
           </p>
         </div>
       </div>

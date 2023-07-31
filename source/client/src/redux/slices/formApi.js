@@ -44,6 +44,48 @@ export const formApi = createApi({
   }),
 });
 
+export const formApiNew = createApi({
+  reducerPath: "formApiNew",
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL + "/new" }),
+  endpoints: (builder) => ({
+    createFormNew: builder.mutation({
+      query: (body) => ({
+        url: "/form",
+        method: "POST",
+        body: body,
+      }),
+      invalidatesTags: ["forms"],
+    }),
+    // deleteFrom: builder.mutation({
+    //   query: (id) => ({
+    //     url: `/form/${id}`,
+    //     method: "DELETE",
+    //   }),
+    //   invalidatesTags: ["forms", "id"],
+    // }),
+    // getForms: builder.query({
+    //   query: () => "/form",
+    //   providesTags: ["forms"],
+    // }),
+    // getFormId: builder.query({
+    //   query: (id) => `/form/${id}`,
+    //   providesTags: ["forms", "id"],
+    // }),
+    // submitForm: builder.mutation({
+    //   query: (data) => ({
+    //     url: `/form/response/${data.id}`,
+    //     method: "POST",
+    //     body: data.body,
+    //   }),
+    //   invalidatesTags: ["forms", "id", "responses"],
+    // }),
+    // getFormResponses: builder.query({
+    //   query: (id) => `/form/response/${id}`,
+    //   providesTags: ["forms", "responses"],
+    // }),
+  }),
+});
+
 export const {
   useCreateFormMutation,
   useGetFormsQuery,
@@ -52,3 +94,5 @@ export const {
   useSubmitFormMutation,
   useGetFormResponsesQuery,
 } = formApi;
+
+export const { useCreateFormNewMutation } = formApiNew;

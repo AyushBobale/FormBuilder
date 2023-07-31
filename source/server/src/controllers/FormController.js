@@ -1,4 +1,5 @@
 import {
+  createFormNService,
   createFormService,
   deleteFormService,
   getAllFormsService,
@@ -79,6 +80,7 @@ const createFormController = async (req, res, next) => {
     next(error);
   }
 };
+
 const editFormController = async (req, res, next) => {
   try {
   } catch (error) {
@@ -158,6 +160,40 @@ const getFormResponesesController = async (req, res, next) => {
   }
 };
 
+// New controllers --------------------------------------------------
+
+const createFormNController = async (req, res, next) => {
+  try {
+    console.log(req.body);
+    const form = await createFormNService(req.body);
+    if (form) {
+      return res.status(200).json({
+        success: true,
+        message: "Form created",
+        errors: [],
+        data: { form },
+      });
+    }
+
+    return res.status(400).json({
+      success: false,
+      message: "Could not get form",
+      errors: [],
+      data: {},
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const createFormNController1 = async (req, res, next) => {
+  try {
+  } catch (error) {
+    next(error);
+  }
+};
+// End New controllers --------------------------------------------------
+
 export {
   createFormController,
   editFormController,
@@ -166,4 +202,6 @@ export {
   getFormByIdController,
   handleFormResponseController,
   getFormResponesesController,
+  //
+  createFormNController,
 };

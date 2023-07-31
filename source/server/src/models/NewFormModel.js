@@ -52,6 +52,7 @@ const FromQuestionSchema = new mongoose.Schema({
 });
 
 const NewFormSchema = new mongoose.Schema({
+  formName: { type: String },
   questions: { type: [FromQuestionSchema] },
 });
 
