@@ -11,6 +11,7 @@ export const ROUTES = {
   VEIW_NEW_FORMS: "/new_form/view",
   FILL_NEW: (id) => `/new_fill/${id}`,
   RESPONSES_NEW: (id) => `/new_responses/${id}`,
+  RESPONSE_FULL: (id) => `/new_responses/full/${id}`,
 
   ABOUT: "/about",
   DRAG_AND_DROP: "/drag_and_drop",

@@ -30,3 +30,9 @@
 .response-row-header > * {
   width: 100%;
 }
+
+.responses-to-full {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

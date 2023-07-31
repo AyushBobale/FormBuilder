@@ -1,6 +1,6 @@
 import "../NewFormRenderer/NewFormRenderer.css";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   useGetFormIdNewQuery,
@@ -11,6 +11,7 @@ import { useNavigate, useParams } from "react-router";
 import CatQue from "../../components/CatQue/CatQue";
 import CompQue from "../../components/CompQue/CompQue";
 import FillUpQue from "../../components/FillUpQue/FillUpQue";
+import { ROUTES } from "../../config";
 import { changeFormId } from "../../redux/slices/newFormSlice";
 
 const ReturnQuestion = (type, idx, data) => {
@@ -62,6 +63,12 @@ const NewFill = () => {
   const handleSubmit = () => {
     submitForm({ id: id, body: { answers: submitData?.responses } });
   };
+
+  useEffect(() => {
+    if (results.isSuccess) {
+      navigate(ROUTES.VEIW_NEW_FORMS);
+    }
+  }, [results.isLoading]);
   return (
     <div className="new-form-wrap">
       <h2>{data?.data?.form?.formName}</h2>
