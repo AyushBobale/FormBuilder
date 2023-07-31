@@ -11,7 +11,15 @@ import { useGetFormIdNewQuery } from "../../redux/slices/formApi";
 const ReturnQuestion = (type, idx, data) => {
   switch (type) {
     case "CAT":
-      return <CatQue question={data?.question} idx={idx} />;
+      const opts = data?.data?.options?.map((elm) => Object.keys(elm)[0]);
+      return (
+        <CatQue
+          question={data?.question}
+          options={opts || []}
+          cats={data?.data?.cats}
+          idx={idx}
+        />
+      );
     case "FILL":
       return (
         <FillUpQue
