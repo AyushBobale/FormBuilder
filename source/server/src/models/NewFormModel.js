@@ -36,6 +36,9 @@ import mongoose from "mongoose";
     for FILL
     answers: [Number] // returned array of index
     we can match this against the 
+
+    for COMP
+    answers: [Number] // returns the choosen index of the answer
   }
    */
 

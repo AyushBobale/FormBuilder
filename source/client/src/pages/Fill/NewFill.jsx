@@ -60,29 +60,8 @@ const NewFill = () => {
             </div>
           );
         })}
-
-        {/* <div className="que-wrap">
-          <CatQue
-            cats={catQueData.cats}
-            options={catQueData.options}
-            question={catQueData.question}
-          />
-        </div>
-
-        <div className="que-wrap">
-          <FillUpQue
-            sentence={fillQueData.sentence}
-            options={fillQueData.options}
-          />
-        </div>
-
-        <div className="que-wrap">
-          <CompQue
-            compPassage={compQueData.passage}
-            compQuestions={compQueData.questions}
-          />
-        </div> */}
       </div>
+      <button className="rst-btn">Submit form</button>
     </div>
   );
 };
