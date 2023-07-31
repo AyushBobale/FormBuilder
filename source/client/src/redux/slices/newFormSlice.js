@@ -111,6 +111,17 @@ const newFormSlice = createSlice({
       };
       state.data.questions.splice(payload.idx, 1, modQue);
     },
+    COMPAddQue: (state, { payload }) => {
+      let modQue = state.data.questions[payload.idx];
+      modQue = {
+        ...modQue,
+        data: {
+          ...(modQue?.data || {}),
+          questions: [...(modQue?.data?.questions || []), payload.question],
+        },
+      };
+      state.data.questions.splice(payload.idx, 1, modQue);
+    },
   },
 });
 
@@ -124,4 +135,5 @@ export const {
   FILLChangeSentence,
   FILLAddOption,
   COMPPassageChange,
+  COMPAddQue,
 } = newFormSlice.actions;

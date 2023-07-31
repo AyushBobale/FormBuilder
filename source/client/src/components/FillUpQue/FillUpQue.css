@@ -46,12 +46,3 @@
   background: var(--primary-bg);
   cursor: grab;
 }
-
-.rst-btn {
-  padding: 10px 20px;
-  width: max-content;
-  border: none;
-  background: var(--accent-one);
-  color: var(--accent-three);
-  border-radius: 5px;
-}

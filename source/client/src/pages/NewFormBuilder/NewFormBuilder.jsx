@@ -3,6 +3,7 @@ import "./NewFormBuilder.css";
 import {
   CATAddCategory,
   CATAddOption,
+  COMPAddQue,
   COMPPassageChange,
   FILLAddOption,
   FILLChangeSentence,
@@ -146,8 +147,36 @@ const ComprehensionBuilder = ({ idx }) => {
     (state) => state?.rootReducer?.newForm?.data?.questions
   );
 
+  const [newQuestion, setNewQuestion] = useState("");
+  const [optionValue, setOptionValue] = useState("");
+  const [options, setOptions] = useState([]);
+  const [rightAnswer, setRightAnswer] = useState(0);
+
   const handlePassageChange = (e) => {
     dispatch(COMPPassageChange({ idx: idx, passage: e.target.value }));
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      setOptions([...options, optionValue]);
+      setOptionValue("");
+    }
+  };
+
+  const handleAddQuestion = () => {
+    setNewQuestion("");
+    setOptions([]);
+    dispatch(
+      COMPAddQue({
+        idx: idx,
+        question: {
+          question: newQuestion,
+          rightOpt: rightAnswer,
+          options: options,
+        },
+      })
+    );
   };
   return (
     <div>
@@ -160,8 +189,72 @@ const ComprehensionBuilder = ({ idx }) => {
         />
       </div>
       <div className="comp-b-que-cont">
+        {questions[idx]?.data?.questions?.map((elm, queIdx) => {
+          return (
+            <div className="comp-b-que">
+              <p>
+                {queIdx + 1}
+                {". " + elm?.question}
+              </p>
+              {elm?.options?.map((opt, optIdx) => {
+                return (
+                  <div className="option">
+                    <span
+                      className={
+                        rightAnswer == optIdx
+                          ? "option-circle selected"
+                          : "option-circle"
+                      }
+                    >
+                      <span>{"\u00A0"}</span>
+                    </span>
+                    {opt}
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+
         <div className="comp-b-que">
-          <p>Question</p>
+          Add Question
+          <input
+            type="text"
+            value={newQuestion}
+            placeholder="Enter new question"
+            onChange={(e) => setNewQuestion(e.target.value)}
+          />
+          {options?.map((elm, optionIdx) => {
+            return (
+              <div
+                className="option"
+                onClick={() => {
+                  setRightAnswer(optionIdx);
+                }}
+              >
+                <span
+                  className={
+                    rightAnswer == optionIdx
+                      ? "option-circle selected"
+                      : "option-circle"
+                  }
+                >
+                  <span>{"\u00A0"}</span>
+                </span>
+                {elm}
+              </div>
+            );
+          })}
+          <input
+            type="text"
+            value={optionValue}
+            placeholder="Add option"
+            onChange={(e) => setOptionValue(e.target.value)}
+            onKeyDown={(e) => handleKeyDown(e)}
+          />
+          <button className="rst-btn" onClick={handleAddQuestion}>
+            Add Question
+          </button>
         </div>
       </div>
     </div>

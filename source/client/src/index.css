@@ -146,3 +146,43 @@ nav a {
 .select::-ms-expand {
   display: none;
 }
+
+.rst-btn {
+  padding: 10px 20px;
+  width: max-content;
+  border: none;
+  background: var(--accent-one);
+  color: var(--accent-three);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.option-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 12px;
+  width: 12px;
+  background: var(--accent-two);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.option-circle > span,
+.option-circle.selected > span {
+  background: var(--accent-two);
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+}
+
+.option-circle.selected > span {
+  background-color: var(--accent-three);
+}
