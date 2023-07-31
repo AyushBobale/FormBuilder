@@ -1,0 +1,57 @@
+.fill-que {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.fill-options {
+  display: flex;
+  gap: 15px;
+  padding: 5px 10px;
+  align-items: center;
+  min-height: 30px;
+  border: 1px solid var(--accent-two);
+  border-radius: 5px;
+}
+
+.fill-options > div {
+  padding: 5px 10px;
+  gap: 5px;
+  border: 1px solid var(--accent-two);
+  border-radius: 5px;
+  cursor: grab;
+}
+
+.fill-up {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.blank {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 50px;
+  border-radius: 5px;
+  background: var(--accent-one);
+  min-height: 30px;
+}
+
+.blank > p {
+  padding: 5px 10px;
+  border: 1px solid var(--accent-two);
+  border-radius: 5px;
+  background: var(--primary-bg);
+  cursor: grab;
+}
+
+.rst-btn {
+  padding: 10px 20px;
+  width: max-content;
+  border: none;
+  background: var(--accent-one);
+  color: var(--accent-three);
+  border-radius: 5px;
+}

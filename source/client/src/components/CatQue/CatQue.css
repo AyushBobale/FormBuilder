@@ -1,0 +1,51 @@
+.cat-que {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.cat-options {
+  display: flex;
+  gap: 15px;
+  padding: 5px 10px;
+  align-items: center;
+  min-height: 30px;
+  border: 1px solid var(--accent-two);
+  border-radius: 5px;
+}
+
+.cat-options > div {
+  padding: 5px 10px;
+  gap: 5px;
+  border: 1px solid var(--accent-two);
+  border-radius: 5px;
+  cursor: grab;
+}
+
+.cats-cont {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.single-cat-cont {
+  min-width: 150px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  border: 1px solid var(--accent-two);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.cat-ans {
+  border: 1px solid var(--accent-two);
+  padding: 5px 10px;
+  border-radius: 5px;
+}

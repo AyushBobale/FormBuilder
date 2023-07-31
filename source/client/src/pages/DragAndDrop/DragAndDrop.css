@@ -1,0 +1,16 @@
+.drag-wrap {
+}
+
+.widget {
+  border: 1px solid black;
+  width: 100px;
+  cursor: grab;
+  height: 50px;
+}
+
+.widgets-cont {
+}
+
+.drop-zone {
+  border: 1px solid black;
+}
