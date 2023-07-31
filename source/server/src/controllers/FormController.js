@@ -1,8 +1,11 @@
 import {
   createFormNService,
   createFormService,
+  deleteFormNService,
   deleteFormService,
+  getAllFormNService,
   getAllFormsService,
+  getFormByIdNService,
   getFormByIdService,
   getFormResponsesService,
   handleFormResponseService,
@@ -186,6 +189,75 @@ const createFormNController = async (req, res, next) => {
   }
 };
 
+const getAllFormsNController = async (req, res, next) => {
+  try {
+    const forms = await getAllFormNService();
+    if (forms) {
+      return res.status(200).json({
+        success: true,
+        message: "Forms found",
+        errors: [],
+        data: { forms: forms },
+      });
+    }
+
+    return res.status(400).json({
+      success: false,
+      message: "Could not get forms",
+      errors: [],
+      data: { forms: [] },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getFormByIdNController = async (req, res, next) => {
+  try {
+    const form = await getFormByIdNService(req.params?.id);
+    if (form) {
+      return res.status(200).json({
+        success: true,
+        message: "Form found",
+        errors: [],
+        data: { form: form },
+      });
+    }
+
+    return res.status(400).json({
+      success: false,
+      message: "Could not get form",
+      errors: [],
+      data: { form: {} },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const deleteFormNController = async (req, res, next) => {
+  try {
+    const form = await deleteFormNService(req.params?.id);
+    if (form) {
+      return res.status(200).json({
+        success: true,
+        message: "Form found",
+        errors: [],
+        data: { form: form },
+      });
+    }
+
+    return res.status(400).json({
+      success: false,
+      message: "Could not get form",
+      errors: [],
+      data: { form: {} },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const createFormNController1 = async (req, res, next) => {
   try {
   } catch (error) {
@@ -204,4 +276,7 @@ export {
   getFormResponesesController,
   //
   createFormNController,
+  getAllFormsNController,
+  getFormByIdNController,
+  deleteFormNController,
 };

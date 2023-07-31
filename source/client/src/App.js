@@ -14,6 +14,7 @@ import Help from "./pages/Help/Help";
 import { Home } from "./pages/Home/Home";
 import NewFormBuilder from "./pages/NewFormBuilder/NewFormBuilder";
 import NewFormRenderer from "./pages/NewFormRenderer/NewFormRendere";
+import NewForms from "./pages/Forms/NewForms";
 import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 import { ROUTES } from "./config";
 import Responses from "./pages/Responses/Responses";
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path={ROUTES.ROOT} element={<UserLayout />}>
           <Route path={ROUTES.ROOT} element={<Home />} />
+          <Route path={ROUTES.VEIW_NEW_FORMS} element={<NewForms />} />
           <Route path={ROUTES.FORMS} element={<Forms />} />
           <Route path={ROUTES.NEW_FORMS} element={<NewFormRenderer />} />
           <Route path={ROUTES.NEW_FORM_BUILDER} element={<NewFormBuilder />} />

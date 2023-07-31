@@ -53,6 +53,19 @@ const getFormResponsesService = async (formId) => {
 const createFormNService = async (data) => {
   return await NewFormModel.create(data);
 };
+
+const getAllFormNService = async () => {
+  return await NewFormModel.find({});
+};
+
+const getFormByIdNService = async (formId) => {
+  return await NewFormModel.findById(formId);
+};
+
+const deleteFormNService = async (formId) => {
+  return await NewFormModel.findByIdAndDelete(formId);
+};
+
 // End New services -----------------------------------------------
 
 export {
@@ -64,4 +77,7 @@ export {
   getFormResponsesService,
   //
   createFormNService,
+  getAllFormNService,
+  getFormByIdNService,
+  deleteFormNService,
 };
