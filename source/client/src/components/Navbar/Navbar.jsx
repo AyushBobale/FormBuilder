@@ -12,6 +12,7 @@ const Navbar = () => {
         <Link to={ROUTES.ABOUT}>About Project</Link>
         <Link to={ROUTES.ROOT}>Create Form</Link>
         <Link to={ROUTES.FORMS}>View Forms</Link>
+        <Link to={ROUTES.NEW_FORMS}>New Renderer</Link>
       </div>
     </nav>
   );
