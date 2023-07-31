@@ -1,0 +1,61 @@
+"filename", "language", "JavaScript", "JSON", "CSS", "Markdown", "HTML", "JavaScript JSX", "comment", "blank", "total"
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\readme.md", "Markdown", 0, 0, 0, 11, 0, 0, 0, 11, 22
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\README.md", "Markdown", 0, 0, 0, 38, 0, 0, 0, 33, 71
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\package-lock.json", "JSON", 0, 17729, 0, 0, 0, 0, 0, 1, 17730
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\package.json", "JSON", 0, 47, 0, 0, 0, 0, 0, 1, 48
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\public\index.html", "HTML", 0, 0, 0, 0, 20, 0, 23, 1, 44
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\public\manifest.json", "JSON", 0, 25, 0, 0, 0, 0, 0, 1, 26
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\App.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\App.js", "JavaScript", 44, 0, 0, 0, 0, 0, 0, 5, 49
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CatQue\CatBuilder.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CatQue\CatBuilder.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 6, 0, 4, 10
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CatQue\CatQue.css", "CSS", 0, 0, 46, 0, 0, 0, 0, 6, 52
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CatQue\CatQue.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 67, 0, 9, 76
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CompQue\CompQue.css", "CSS", 0, 0, 14, 0, 0, 0, 0, 2, 16
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\CompQue\CompQue.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 46, 0, 6, 52
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\FillUpQue\FillUpQue.css", "CSS", 0, 0, 43, 0, 0, 0, 0, 6, 49
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\FillUpQue\FillUpQue.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 69, 0, 10, 79
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\Navbar\Navbar.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 21, 0, 3, 24
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\Sidebar\Sidebar.css", "CSS", 0, 0, 65, 0, 0, 0, 1, 11, 77
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\components\Sidebar\Sidebar.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 223, 2, 17, 242
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\config.js", "JavaScript", 16, 0, 0, 0, 0, 0, 1, 4, 21
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\index.css", "CSS", 0, 0, 163, 0, 0, 0, 7, 19, 189
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\index.js", "JavaScript", 14, 0, 0, 0, 0, 0, 0, 3, 17
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\DragAndDrop\DragAndDrop.css", "CSS", 0, 0, 13, 0, 0, 0, 0, 4, 17
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\DragAndDrop\DragAndDrop.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 52, 0, 8, 60
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Fill\Fill.css", "CSS", 0, 0, 20, 0, 0, 0, 0, 3, 23
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Fill\Fill.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 103, 30, 13, 146
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Fill\NewFill.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 75, 0, 10, 85
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Forms\Forms.css", "CSS", 0, 0, 39, 0, 0, 0, 0, 8, 47
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Forms\Forms.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 38, 0, 9, 47
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Forms\NewForms.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 37, 0, 8, 45
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Help\Help.css", "CSS", 0, 0, 9, 0, 0, 0, 0, 3, 12
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Help\Help.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 50, 0, 5, 55
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Home\Home.css", "CSS", 0, 0, 69, 0, 0, 0, 1, 12, 82
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Home\Home.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 103, 2, 6, 111
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Layouts\User\UserLayout.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 26, 0, 3, 29
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\NewFormBuilder\NewFormBuilder.css", "CSS", 0, 0, 94, 0, 0, 0, 0, 15, 109
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\NewFormBuilder\NewFormBuilder.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 314, 0, 22, 336
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\NewFormRenderer\NewFormRendere.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 57, 0, 8, 65
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\NewFormRenderer\NewFormRenderer.css", "CSS", 0, 0, 12, 0, 0, 0, 0, 2, 14
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\PageNotFound\PageNotFound.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 4, 0, 2, 6
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Responses\Response.css", "CSS", 0, 0, 27, 0, 0, 0, 0, 6, 33
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\pages\Responses\Responses.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 38, 6, 5, 49
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\slices\dataSlice.js", "JavaScript", 20, 0, 0, 0, 0, 0, 0, 4, 24
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\slices\formApi.js", "JavaScript", 95, 0, 0, 0, 0, 0, 4, 6, 105
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\slices\formSlice.js", "JavaScript", 133, 0, 0, 0, 0, 0, 12, 4, 149
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\slices\newFormSlice.js", "JavaScript", 119, 0, 0, 0, 0, 0, 29, 4, 152
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\slices\rootApi.js", "JavaScript", 12, 0, 0, 0, 0, 0, 0, 4, 16
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\client\src\redux\store.js", "JavaScript", 24, 0, 0, 0, 0, 0, 0, 4, 28
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\index.js", "JavaScript", 28, 0, 0, 0, 0, 0, 5, 7, 40
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\package-lock.json", "JSON", 0, 1246, 0, 0, 0, 0, 0, 1, 1247
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\package.json", "JSON", 0, 23, 0, 0, 0, 0, 0, 1, 24
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\service\FormService.js", "JavaScript", 75, 0, 0, 0, 0, 0, 3, 14, 92
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\controllers\FormController.js", "JavaScript", 282, 0, 0, 0, 0, 0, 3, 28, 313
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\db\conn.js", "JavaScript", 11, 0, 0, 0, 0, 0, 0, 3, 14
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\middlewares\errorHandlerMiddleware.js", "JavaScript", 13, 0, 0, 0, 0, 0, 0, 3, 16
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\models\FormModel.js", "JavaScript", 17, 0, 0, 0, 0, 0, 0, 5, 22
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\models\FormResponseMode.js", "JavaScript", 11, 0, 0, 0, 0, 0, 0, 5, 16
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\models\NewFormModel.js", "JavaScript", 29, 0, 0, 0, 0, 0, 44, 7, 80
+"c:\Users\Ayush\Documents\Ayush\Interview\Super Assistant\code\source\server\src\routers\formRouter.js", "JavaScript", 29, 0, 0, 0, 0, 0, 0, 6, 35
+"Total", "-", 972, 19070, 614, 49, 20, 1329, 173, 413, 22640

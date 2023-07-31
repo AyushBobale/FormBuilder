@@ -71,14 +71,14 @@ export const formApiNew = createApi({
       }),
       invalidatesTags: ["forms", "id"],
     }),
-    // submitForm: builder.mutation({
-    //   query: (data) => ({
-    //     url: `/form/response/${data.id}`,
-    //     method: "POST",
-    //     body: data.body,
-    //   }),
-    //   invalidatesTags: ["forms", "id", "responses"],
-    // }),
+    submitFormNew: builder.mutation({
+      query: (data) => ({
+        url: `/form/response/${data.id}`,
+        method: "POST",
+        body: data.body,
+      }),
+      invalidatesTags: ["forms", "id", "responses"],
+    }),
     // getFormResponses: builder.query({
     //   query: (id) => `/form/response/${id}`,
     //   providesTags: ["forms", "responses"],
@@ -100,4 +100,5 @@ export const {
   useGetFormsNewQuery,
   useGetFormIdNewQuery,
   useDeleteFromNewMutation,
+  useSubmitFormNewMutation,
 } = formApiNew;

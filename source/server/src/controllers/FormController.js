@@ -8,6 +8,7 @@ import {
   getFormByIdNService,
   getFormByIdService,
   getFormResponsesService,
+  handleFormResponseNService,
   handleFormResponseService,
 } from "../../service/FormService.js";
 
@@ -258,6 +259,33 @@ const deleteFormNController = async (req, res, next) => {
   }
 };
 
+const handleFormResponseNController = async (req, res, next) => {
+  try {
+    const response = await handleFormResponseNService(
+      req.params.id,
+      req.body.answers
+    );
+
+    if (response) {
+      return res.status(200).json({
+        success: true,
+        message: "Response Recorded",
+        errors: [],
+        data: { response: response },
+      });
+    }
+
+    return res.status(400).json({
+      success: false,
+      message: "Could not record response",
+      errors: [],
+      data: {},
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const createFormNController1 = async (req, res, next) => {
   try {
   } catch (error) {
@@ -279,4 +307,5 @@ export {
   getAllFormsNController,
   getFormByIdNController,
   deleteFormNController,
+  handleFormResponseNController,
 };

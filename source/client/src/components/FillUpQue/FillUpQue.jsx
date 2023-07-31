@@ -1,8 +1,13 @@
 import "./FillUpQue.css";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import { editAnswer } from "../../redux/slices/newFormSlice";
+import { useDispatch } from "react-redux";
 
 const FillUpQue = ({ sentence, options, question, idx }) => {
+  const dispatch = useDispatch();
+
   const [dragables, setDragables] = useState(options);
   const [widgets, setWidgets] = useState({});
 
@@ -17,7 +22,9 @@ const FillUpQue = ({ sentence, options, question, idx }) => {
     setWidgets({ ...widgets, [dropNumber]: widgetType });
   };
 
-  console.log(widgets);
+  useEffect(() => {
+    dispatch(editAnswer({ idx: idx, data: Object.values(widgets) }));
+  }, [widgets]);
 
   const handleDragOver = (e) => {
     e.preventDefault();

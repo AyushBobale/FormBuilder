@@ -1,13 +1,21 @@
 import "./CompQue.css";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import { editAnswer } from "../../redux/slices/newFormSlice";
+import { useDispatch } from "react-redux";
 
 const CompQue = ({ compPassage, compQuestions, question, idx }) => {
+  const dispatch = useDispatch();
   const [answers, setAnswers] = useState({});
 
   const handleClick = (idx, value) => {
     setAnswers({ ...answers, [idx]: value });
   };
+
+  useEffect(() => {
+    dispatch(editAnswer({ idx: idx, data: answers }));
+  }, [answers]);
 
   return (
     <div className="comp-que">

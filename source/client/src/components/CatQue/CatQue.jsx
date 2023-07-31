@@ -1,8 +1,13 @@
 import "./CatQue.css";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import { editAnswer } from "../../redux/slices/newFormSlice";
+import { useDispatch } from "react-redux";
 
 const CatQue = ({ question, cats, options, idx }) => {
+  const dispatch = useDispatch();
+
   const [dragables, setDragables] = useState(options);
   const [widgets, setWidgets] = useState({});
 
@@ -18,7 +23,9 @@ const CatQue = ({ question, cats, options, idx }) => {
     setWidgets({ ...widgets, [cat]: [...prevWidgets, widgetType] });
   };
 
-  console.log(widgets);
+  useEffect(() => {
+    dispatch(editAnswer({ idx: idx, data: widgets }));
+  }, [widgets]);
 
   const handleDragOver = (e) => {
     e.preventDefault();

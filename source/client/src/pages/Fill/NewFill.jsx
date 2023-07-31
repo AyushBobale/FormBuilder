@@ -1,12 +1,17 @@
 import "../NewFormRenderer/NewFormRenderer.css";
 
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  useGetFormIdNewQuery,
+  useSubmitFormNewMutation,
+} from "../../redux/slices/formApi";
 import { useNavigate, useParams } from "react-router";
 
 import CatQue from "../../components/CatQue/CatQue";
 import CompQue from "../../components/CompQue/CompQue";
 import FillUpQue from "../../components/FillUpQue/FillUpQue";
-import { useGetFormIdNewQuery } from "../../redux/slices/formApi";
+import { changeFormId } from "../../redux/slices/newFormSlice";
 
 const ReturnQuestion = (type, idx, data) => {
   switch (type) {
@@ -42,13 +47,21 @@ const ReturnQuestion = (type, idx, data) => {
 };
 
 const NewFill = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const { id } = useParams();
+
+  const submitData = useSelector(
+    (state) => state?.rootReducer?.newForm?.data?.submitData
+  );
+
   const { data, isLoading, error, isSuccess } = useGetFormIdNewQuery(id);
-  console.log(data);
+  const [submitForm, results] = useSubmitFormNewMutation();
 
-  const [formData, setFormData] = useState([]);
-
+  const handleSubmit = () => {
+    submitForm({ id: id, body: { answers: submitData?.responses } });
+  };
   return (
     <div className="new-form-wrap">
       <h2>{data?.data?.form?.formName}</h2>
@@ -61,7 +74,9 @@ const NewFill = () => {
           );
         })}
       </div>
-      <button className="rst-btn">Submit form</button>
+      <button className="rst-btn" onClick={handleSubmit}>
+        Submit form
+      </button>
     </div>
   );
 };
