@@ -67,3 +67,10 @@
 .edit-field > span > button {
   width: 45%;
 }
+
+.new-btn {
+  cursor: pointer;
+  border: 2px solid var(--accent-two);
+  padding: 5px 10px;
+  border-radius: 5px;
+}

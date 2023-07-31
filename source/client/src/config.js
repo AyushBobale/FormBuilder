@@ -5,7 +5,8 @@ export const ROUTES = {
   FILL: (id) => `/fill/${id}`,
   RESPONSES: (id) => `/responses/${id}`,
   FORMS: "/forms",
-  NEW_FORMS: "/new_forms",
+  NEW_FORMS: "/new_form",
+  NEW_FORM_BUILDER: "/new_form/builder",
   ABOUT: "/about",
   DRAG_AND_DROP: "/drag_and_drop",
 };

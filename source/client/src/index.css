@@ -18,6 +18,8 @@
   box-sizing: border-box;
   scrollbar-width: thin;
   transition: all 0.3s ease-out;
+  color: var(--accent-three);
+  font-family: "Montserrat", sans-serif;
 }
 
 html,
@@ -26,8 +28,8 @@ body,
 .main {
   background-color: var(--primary-bg);
   color: var(--accent-three);
-  width: 100%;
   font-family: "Montserrat", sans-serif;
+  width: 100%;
 }
 
 nav {
@@ -47,7 +49,9 @@ nav {
   background-color: var(--accent-one);
 }
 
-h3 {
+h2,
+h3,
+h4 {
   margin-bottom: 10px;
 }
 
@@ -108,4 +112,77 @@ nav a {
 
 .content {
   padding: 20px;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 250px;
+}
+.select-wrapper::after {
+  color: var(--accent-three);
+  content: "▾";
+  margin-right: 10px;
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  font-size: 20px;
+}
+.select {
+  font-size: 12px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: var(--accent-one);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  font-size: 18px;
+}
+.select:focus {
+  color: var(--accent-three);
+}
+.select::-ms-expand {
+  display: none;
+}
+
+.rst-btn {
+  padding: 10px 20px;
+  width: max-content;
+  border: none;
+  background: var(--accent-one);
+  color: var(--accent-three);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.option-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 12px;
+  width: 12px;
+  background: var(--accent-two);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.option-circle > span,
+.option-circle.selected > span {
+  background: var(--accent-two);
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+}
+
+.option-circle.selected > span {
+  background-color: var(--accent-three);
 }

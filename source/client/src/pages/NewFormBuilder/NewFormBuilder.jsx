@@ -1,61 +1,332 @@
 import "./NewFormBuilder.css";
 
-import CatQue from "../../components/CatQue/CatQue";
-import CompQue from "../../components/CompQue/CompQue";
-import FillUpQue from "../../components/FillUpQue/FillUpQue";
-import React from "react";
+import {
+  CATAddCategory,
+  CATAddOption,
+  COMPAddQue,
+  COMPPassageChange,
+  FILLAddOption,
+  FILLChangeSentence,
+  changeFromName,
+  changeQuestion,
+} from "../../redux/slices/newFormSlice";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-const NewFormBuilder = () => {
-  const compQueData = {
-    passage:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat purus eget auctor rhoncus. Sed maximus libero posuere lacus cursus ornare. Etiam viverra lacus hendrerit tortor tincidunt, malesuada cursus elit semper. Cras rutrum lobortis arcu congue lobortis. Pellentesque eget massa sit amet neque auctor rhoncus. Donec augue risus, efficitur a tellus et, eleifend rutrum nisi. Duis vehicula cursus neque ut consectetur. Vestibulum molestie magna nunc, id iaculis nibh elementum quis. Morbi lacinia aliquam tortor, et rutrum tellus pellentesque a. Ut hendrerit, elit in pulvinar molestie, leo elit accumsan elit, eu facilisis purus metus et sem. Maecenas ultrices ex arcu, maximus venenatis nisi interdum venenatis. Sed tincidunt sapien ut ante malesuada molestie. Nunc gravida eget eros non eleifend. Etiam non magna et lectus sagittis finibus. Quisque a mauris tincidunt, ultricies purus at, sodales semMauris tincidunt pharetra sem. Nullam hendrerit feugiat enim at feugiat. Nam blandit accumsan vestibulum. Morbi ullamcorper tristique ipsum, eget rutrum elit mattis quis. Aenean consequat, est et eleifend sodales, nisi augue elementum magna, non rhoncus dui nisi maximus nisl. Suspendisse consequat, diam id porta placerat, purus lacus blandit erat, ac aliquet neque nisi nec erat. Pellentesque at luctus sem. Nam posuere sodales quam. Praesent ex felis, ullamcorper. ",
-    questions: [
-      {
-        question: "This is question",
-        options: ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-      },
-      {
-        question: "This is question",
-        options: ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-      },
-    ],
+const CategorizeBuilder = ({ idx }) => {
+  const dispatch = useDispatch();
+  const [category, setCategory] = useState("");
+  const [option, setOption] = useState({ key: "", value: "" });
+  const questions = useSelector(
+    (state) => state?.rootReducer?.newForm?.data?.questions
+  );
+
+  const handleAddCategory = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      dispatch(CATAddCategory({ idx: idx, cat: category }));
+      setCategory("");
+    }
+  };
+  const handleAddOption = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      dispatch(
+        CATAddOption({
+          idx: idx,
+          option: {
+            [option.key]: option.value || questions?.[idx]?.data?.cats?.[0],
+          },
+        })
+      );
+      setOption({ key: "", value: "" });
+    }
   };
 
-  const fillQueData = {
-    sentence: "Fill in the blank this is option1 this is option2".split(" "),
-    options: [3, 6],
+  return (
+    <div>
+      <div className="cat-b-cats-cont">
+        <p>Categories</p>
+        {questions?.[idx]?.data?.cats?.map((elm, idx) => {
+          return <div className="cat-b-cat">{elm}</div>;
+        })}
+      </div>
+
+      <input
+        type="text"
+        placeholder="Add Category"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+        onKeyDown={handleAddCategory}
+      />
+      <div className="cat-b-opts-cont">
+        <p>Options</p>
+        {questions?.[idx]?.data?.options?.map((elm, idx) => {
+          return (
+            <div className="cat-b-cat">
+              {Object.keys(elm)?.[0]} : {Object.values(elm)?.[0]}
+            </div>
+          );
+        })}
+      </div>
+      <div className="opt-add">
+        <input
+          type="text"
+          placeholder="Add option"
+          value={option.key}
+          onChange={(e) => setOption({ ...option, key: e.target.value })}
+          onKeyDown={handleAddOption}
+        />
+        <div class="select-wrapper">
+          <select
+            class="select"
+            onChange={(e) => {
+              setOption({ ...option, value: e.target.value });
+            }}
+          >
+            {questions?.[idx]?.data?.cats?.map((elm, idx) => {
+              return <option value={elm}>{elm}</option>;
+            })}
+          </select>
+        </div>
+      </div>
+    </div>
+  );
+};
+const FillUpBuilder = ({ idx }) => {
+  const dispatch = useDispatch();
+  const [fillUp, setFillUp] = useState("");
+  const questions = useSelector(
+    (state) => state?.rootReducer?.newForm?.data?.questions
+  );
+
+  const handleChangeFillUp = (e) => {
+    dispatch(FILLChangeSentence({ idx: idx, sentence: e.target.value }));
   };
 
-  const catQueData = {
-    question: "This is a question",
-    cats: ["cat1", "cat2", "cat3"],
-    options: ["ans1", "ans2", "ans3", "ans4", "ans5"],
+  const handleAddOption = (option) => {
+    const index = questions?.[idx]?.data?.sentence?.indexOf(option);
+    dispatch(FILLAddOption({ idx: idx, option: index }));
+  };
+
+  return (
+    <div>
+      <div className="fill-b-opts-cont">
+        <p>Selected Options</p>
+        {questions?.[idx]?.data?.options?.map((elm) => {
+          console.log(
+            elm,
+            questions?.[idx]?.data?.sentence,
+            questions?.[idx]?.data?.sentence?.[elm]
+          );
+          return <div>{questions?.[idx]?.data?.sentence?.[elm]}</div>;
+        })}
+      </div>
+      <input
+        type="text"
+        placeholder="Enter the sentence for fill up"
+        value={questions?.[idx]?.data?.sentence?.join(" ")}
+        onChange={handleChangeFillUp}
+      />
+      <div className="fill-b-opts-cont">
+        <p>Select Options</p>
+        {questions?.[idx]?.data?.sentence?.map((elm, senIdx) => {
+          if (questions?.[idx]?.data?.options?.includes(senIdx)) {
+            return;
+          }
+          return <div onClick={() => handleAddOption(elm)}>{elm}</div>;
+        })}
+      </div>
+    </div>
+  );
+};
+
+const ComprehensionBuilder = ({ idx }) => {
+  const dispatch = useDispatch();
+  const questions = useSelector(
+    (state) => state?.rootReducer?.newForm?.data?.questions
+  );
+
+  const [newQuestion, setNewQuestion] = useState("");
+  const [optionValue, setOptionValue] = useState("");
+  const [options, setOptions] = useState([]);
+  const [rightAnswer, setRightAnswer] = useState(0);
+
+  const handlePassageChange = (e) => {
+    dispatch(COMPPassageChange({ idx: idx, passage: e.target.value }));
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      setOptions([...options, optionValue]);
+      setOptionValue("");
+    }
+  };
+
+  const handleAddQuestion = () => {
+    setNewQuestion("");
+    setOptions([]);
+    dispatch(
+      COMPAddQue({
+        idx: idx,
+        question: {
+          question: newQuestion,
+          rightOpt: rightAnswer,
+          options: options,
+        },
+      })
+    );
   };
   return (
-    <div className="new-form-wrap">
+    <div>
+      <div className="comp-b-cont">
+        <p>Add passage</p>
+        <textarea
+          placeholder="Enter the passage"
+          value={questions?.data?.passage}
+          onChange={handlePassageChange}
+        />
+      </div>
+      <div className="comp-b-que-cont">
+        {questions[idx]?.data?.questions?.map((elm, queIdx) => {
+          return (
+            <div className="comp-b-que">
+              <p>
+                {queIdx + 1}
+                {". " + elm?.question}
+              </p>
+              {elm?.options?.map((opt, optIdx) => {
+                return (
+                  <div className="option">
+                    <span
+                      className={
+                        rightAnswer == optIdx
+                          ? "option-circle selected"
+                          : "option-circle"
+                      }
+                    >
+                      <span>{"\u00A0"}</span>
+                    </span>
+                    {opt}
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+
+        <div className="comp-b-que">
+          Add Question
+          <input
+            type="text"
+            value={newQuestion}
+            placeholder="Enter new question"
+            onChange={(e) => setNewQuestion(e.target.value)}
+          />
+          {options?.map((elm, optionIdx) => {
+            return (
+              <div
+                className="option"
+                onClick={() => {
+                  setRightAnswer(optionIdx);
+                }}
+              >
+                <span
+                  className={
+                    rightAnswer == optionIdx
+                      ? "option-circle selected"
+                      : "option-circle"
+                  }
+                >
+                  <span>{"\u00A0"}</span>
+                </span>
+                {elm}
+              </div>
+            );
+          })}
+          <input
+            type="text"
+            value={optionValue}
+            placeholder="Add option"
+            onChange={(e) => setOptionValue(e.target.value)}
+            onKeyDown={(e) => handleKeyDown(e)}
+          />
+          <button className="rst-btn" onClick={handleAddQuestion}>
+            Add Question
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const NewFormBuilder = () => {
+  const dispatch = useDispatch();
+  const formName = useSelector(
+    (state) => state?.rootReducer?.newForm?.data?.formName
+  );
+  const questions = useSelector(
+    (state) => state?.rootReducer?.newForm?.data?.questions
+  );
+
+  const getType = (type) => {
+    switch (type) {
+      case "CAT":
+        return "Categorize";
+      case "FILL":
+        return "Fill up";
+      case "COMP":
+        return "Comprehension";
+    }
+  };
+
+  const getBuilder = (type, idx) => {
+    switch (type) {
+      case "CAT":
+        return <CategorizeBuilder idx={idx} />;
+      case "FILL":
+        return <FillUpBuilder idx={idx} />;
+      case "COMP":
+        return <ComprehensionBuilder idx={idx} />;
+    }
+  };
+
+  const handleFormName = (e) => {
+    dispatch(changeFromName(e.target.value));
+  };
+
+  const handleQuestionChange = (e, idx) => {
+    dispatch(changeQuestion({ idx: idx, question: e.target.value }));
+  };
+
+  return (
+    <div className="form-builder">
+      Tip : Press Enter on inputs to create entries
       <h2>New Form Builder</h2>
-      <div className="new-form">
-        <div className="que-wrap">
-          <CatQue
-            cats={catQueData.cats}
-            options={catQueData.options}
-            question={catQueData.question}
-          />
-        </div>
-
-        <div className="que-wrap">
-          <FillUpQue
-            sentence={fillQueData.sentence}
-            options={fillQueData.options}
-          />
-        </div>
-
-        <div className="que-wrap">
-          <CompQue
-            compPassage={compQueData.passage}
-            compQuestions={compQueData.questions}
-          />
-        </div>
+      <input
+        type="text"
+        placeholder="Add form Name !"
+        value={formName}
+        onChange={handleFormName}
+      />
+      <div className="builder-ques">
+        {questions?.map((elm, idx) => {
+          return (
+            <div className="builder-que">
+              <h4>
+                Question No {idx + 1} : {getType(elm?.type)}{" "}
+              </h4>
+              <input
+                type="text"
+                placeholder="Add question !"
+                value={elm?.question}
+                onChange={(e) => handleQuestionChange(e, idx)}
+              />
+              {getBuilder(elm?.type, idx)}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

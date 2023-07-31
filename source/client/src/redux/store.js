@@ -4,10 +4,12 @@ import { baseApi } from "./slices/rootApi.js";
 import dataSlice from "./slices/dataSlice.js";
 import { formApi } from "./slices/formApi.js";
 import formSlice from "./slices/formSlice.js";
+import newFormSlice from "./slices/newFormSlice.js";
 
 const rootReducer = combineReducers({
   data: dataSlice,
   form: formSlice,
+  newForm: newFormSlice,
 });
 
 export default configureStore({

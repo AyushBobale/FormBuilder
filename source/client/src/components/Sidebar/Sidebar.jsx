@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router";
 
 import { ROUTES } from "../../config";
+import { addQ } from "../../redux/slices/newFormSlice";
 import { useCreateFormMutation } from "../../redux/slices/formApi";
 
 const Sidebar = () => {
@@ -74,6 +75,70 @@ const Sidebar = () => {
       dispatch(resetForm());
     }
   }, [result.data]);
+
+  // New form fucntions----------------------------------------------------------
+  const addCatQue = () => {
+    dispatch(
+      addQ({
+        type: "CAT",
+        question: "Please edit the question",
+        questionImg: "",
+        data: { cats: [], options: [] },
+      })
+    );
+  };
+  const addFillQue = () => {
+    dispatch(
+      addQ({
+        type: "FILL",
+        question: "Please edit the question",
+        questionImg: "",
+        data: {
+          sentence: [],
+          options: [],
+        },
+      })
+    );
+  };
+  const addCompQue = () => {
+    dispatch(
+      addQ({
+        type: "COMP",
+        question: "Please edit the question",
+        questionImg: "",
+        data: {
+          passage: "",
+          questions: [],
+        },
+      })
+    );
+  };
+  //-----------------------------------------------------------------------------
+
+  if (location.pathname == ROUTES.NEW_FORM_BUILDER) {
+    return (
+      <div
+        className={
+          location.pathname == ROUTES.NEW_FORM_BUILDER
+            ? "sidebar-wrap"
+            : "sidebar-wrap-hidden"
+        }
+      >
+        <div className="sidebar">
+          <h3>Options</h3>
+          <p className="new-btn" onClick={addCatQue}>
+            Add Categorize Question
+          </p>
+          <p className="new-btn" onClick={addFillQue}>
+            Add Fill up{" "}
+          </p>
+          <p className="new-btn" onClick={addCompQue}>
+            Add Comprehension Question
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
