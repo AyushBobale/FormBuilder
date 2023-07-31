@@ -2,7 +2,7 @@ import "./CatQue.css";
 
 import React, { useState } from "react";
 
-const CatQue = ({ question, cats, options }) => {
+const CatQue = ({ question, cats, options, idx }) => {
   const [dragables, setDragables] = useState(options);
   const [widgets, setWidgets] = useState({});
 
@@ -33,7 +33,7 @@ const CatQue = ({ question, cats, options }) => {
       <h3>Categorize Question</h3>
       <p>{question}</p>
       <div className="cat-options">
-        {dragables.map((elm, idx) => {
+        {dragables?.map((elm, idx) => {
           return (
             <div
               className="fill-option"

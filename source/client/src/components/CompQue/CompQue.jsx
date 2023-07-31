@@ -2,7 +2,7 @@ import "./CompQue.css";
 
 import React, { useState } from "react";
 
-const CompQue = ({ compPassage, compQuestions }) => {
+const CompQue = ({ compPassage, compQuestions, question, idx }) => {
   const [answers, setAnswers] = useState({});
 
   const handleClick = (idx, value) => {
@@ -14,6 +14,7 @@ const CompQue = ({ compPassage, compQuestions }) => {
   return (
     <div className="comp-que">
       <h3>Comprehension Question</h3>
+      <p>{question}</p>
       <p className="passage">{compPassage}</p>
       <div className="mcqs">
         {compQuestions?.map((elm, idx) => {

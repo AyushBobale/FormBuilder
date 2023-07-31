@@ -2,7 +2,7 @@ import "./FillUpQue.css";
 
 import React, { useState } from "react";
 
-const FillUpQue = ({ sentence, options }) => {
+const FillUpQue = ({ sentence, options, question, idx }) => {
   const [dragables, setDragables] = useState(options);
   const [widgets, setWidgets] = useState({});
 
@@ -31,8 +31,9 @@ const FillUpQue = ({ sentence, options }) => {
   return (
     <div className="fill-que">
       <h3>Fill Up Question</h3>
+      <p>{question}</p>
       <div className="fill-options">
-        {dragables.map((elm, idx) => {
+        {dragables?.map((elm, idx) => {
           return (
             <div
               className="fill-option"

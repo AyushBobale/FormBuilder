@@ -28,9 +28,9 @@ const NewForms = () => {
               <p>{idx + 1}.</p>
               <p>{elm?.formName}</p>
 
-              <Link to={ROUTES.RESPONSES(elm?._id)}>Responses</Link>
+              <Link to={ROUTES.RESPONSES_NEW(elm?._id)}>Responses</Link>
 
-              <Link to={ROUTES.FILL(elm?._id)}>Fill</Link>
+              <Link to={ROUTES.FILL_NEW(elm?._id)}>Fill</Link>
 
               <button onClick={() => deleteForm(elm?._id)}>Delete</button>
             </div>

@@ -12,6 +12,7 @@ import Fill from "./pages/Fill/Fill";
 import Forms from "./pages/Forms/Forms";
 import Help from "./pages/Help/Help";
 import { Home } from "./pages/Home/Home";
+import NewFill from "./pages/Fill/NewFill";
 import NewFormBuilder from "./pages/NewFormBuilder/NewFormBuilder";
 import NewFormRenderer from "./pages/NewFormRenderer/NewFormRendere";
 import NewForms from "./pages/Forms/NewForms";
@@ -31,6 +32,7 @@ function App() {
           <Route path={ROUTES.NEW_FORMS} element={<NewFormRenderer />} />
           <Route path={ROUTES.NEW_FORM_BUILDER} element={<NewFormBuilder />} />
           <Route path={ROUTES.FILL(":id")} element={<Fill />} />
+          <Route path={ROUTES.FILL_NEW(":id")} element={<NewFill />} />
           <Route path={ROUTES.RESPONSES(":id")} element={<Responses />} />
           <Route path={ROUTES.ABOUT} element={<Help />} />
           <Route path={ROUTES.EDIT(":id")} element={<Home />} />
