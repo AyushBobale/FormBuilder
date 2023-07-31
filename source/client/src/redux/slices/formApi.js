@@ -83,6 +83,10 @@ export const formApiNew = createApi({
       query: (id) => `/form/response/${id}`,
       providesTags: ["forms", "responses"],
     }),
+    getFormResponseSpecific: builder.query({
+      query: (id) => `/form/response_specific/${id}`,
+      providesTags: ["forms", "responses"],
+    }),
   }),
 });
 
@@ -102,4 +106,5 @@ export const {
   useDeleteFromNewMutation,
   useSubmitFormNewMutation,
   useGetFormResponsesNewQuery,
+  useGetFormResponseSpecificQuery,
 } = formApiNew;

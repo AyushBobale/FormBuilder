@@ -9,6 +9,7 @@ import {
   getFormByIdNController,
   getFormResponesesController,
   getFormResponesesNController,
+  getResoponseByIdController,
   handleFormResponseController,
   handleFormResponseNController,
 } from "../controllers/FormController.js";
@@ -27,6 +28,7 @@ FormRouter.get("/", getAllFormsController);
 
 FormRouterNew.post("/", createFormNController);
 FormRouterNew.get("/response/:id", getFormResponesesNController);
+FormRouterNew.get("/response_specific/:id", getResoponseByIdController);
 FormRouterNew.post("/response/:id", handleFormResponseNController);
 FormRouterNew.delete("/:id", deleteFormNController);
 FormRouterNew.get("/:id", getFormByIdNController);

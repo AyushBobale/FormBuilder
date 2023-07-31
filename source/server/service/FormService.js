@@ -71,6 +71,8 @@ const deleteFormNService = async (formId) => {
 };
 
 const handleFormResponseNService = async (formId, response) => {
+  console.log("Inside service");
+  console.log(formId, response);
   return await NewFormResponseModel.create({
     formId: formId,
     answers: response,
@@ -81,6 +83,12 @@ const getFormResponseNService = async (formId) => {
   const responses = await NewFormResponseModel.find({ formId: formId });
   const form = await NewFormModel.findById(formId);
   return { responses, form };
+};
+
+const getResoponseByIdService = async (formId) => {
+  return await NewFormResponseModel.findById(formId).populate({
+    path: "formId",
+  });
 };
 
 // End New services -----------------------------------------------
@@ -99,4 +107,5 @@ export {
   deleteFormNService,
   handleFormResponseNService,
   getFormResponseNService,
+  getResoponseByIdService,
 };

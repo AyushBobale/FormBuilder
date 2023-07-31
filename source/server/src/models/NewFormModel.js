@@ -68,8 +68,8 @@ const NewFormAnswerSchema = new mongoose.Schema({
 });
 
 const NewFormResonseSchema = new mongoose.Schema({
-  formId: { type: mongoose.Types.ObjectId, required: true },
-  answers: { type: [NewFormAnswerSchema] },
+  formId: { type: mongoose.Types.ObjectId, ref: "NewForm", required: true },
+  answers: { type: [Object] },
 });
 
 // Models

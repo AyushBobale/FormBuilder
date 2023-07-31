@@ -20,6 +20,7 @@ import NewResponses from "./pages/Responses/NewResponses";
 import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 import { ROUTES } from "./config";
 import Responses from "./pages/Responses/Responses";
+import SpecificResponse from "./pages/SpecificResponse/SpecificResponse";
 import { UserLayout } from "./pages/Layouts/User/UserLayout";
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
           <Route
             path={ROUTES.RESPONSES_NEW(":id")}
             element={<NewResponses />}
+          />
+          <Route
+            path={ROUTES.RESPONSE_FULL(":id")}
+            element={<SpecificResponse />}
           />
           <Route path={ROUTES.ABOUT} element={<Help />} />
           <Route path={ROUTES.EDIT(":id")} element={<Home />} />
