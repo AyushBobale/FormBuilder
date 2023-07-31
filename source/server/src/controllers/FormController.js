@@ -9,6 +9,7 @@ import {
   getFormByIdService,
   getFormResponseNService,
   getFormResponsesService,
+  getResoponseByIdService,
   handleFormResponseNService,
   handleFormResponseService,
 } from "../../service/FormService.js";
@@ -262,6 +263,7 @@ const deleteFormNController = async (req, res, next) => {
 
 const handleFormResponseNController = async (req, res, next) => {
   try {
+    console.log(req.params.id, req.body.answers);
     const response = await handleFormResponseNService(
       req.params.id,
       req.body.answers
@@ -309,6 +311,30 @@ const getFormResponesesNController = async (req, res, next) => {
     next(error);
   }
 };
+
+const getResoponseByIdController = async (req, res, next) => {
+  try {
+    const form = await getResoponseByIdService(req.params?.id);
+    if (form) {
+      return res.status(200).json({
+        success: true,
+        message: "Form found",
+        errors: [],
+        data: form,
+      });
+    }
+
+    return res.status(400).json({
+      success: false,
+      message: "Could not get form",
+      errors: [],
+      data: {},
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 // End New controllers --------------------------------------------------
 
 export {
@@ -326,4 +352,5 @@ export {
   deleteFormNController,
   handleFormResponseNController,
   getFormResponesesNController,
+  getResoponseByIdController,
 };

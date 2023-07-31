@@ -9,7 +9,6 @@ import { useParams } from "react-router";
 const NewResponses = () => {
   const { id } = useParams();
   const { data, isLoading, isSuccess, error } = useGetFormResponsesNewQuery(id);
-  console.log(data);
   return (
     <div className="response-wrap">
       <>
