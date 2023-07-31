@@ -39,7 +39,8 @@ input {
 
 .cat-b-cats-cont,
 .cat-b-opts-cont,
-.fill-b-opts-cont {
+.fill-b-opts-cont,
+.comp-b-cont {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -78,4 +79,30 @@ input {
 .opt-add {
   display: flex;
   gap: 10px;
+}
+
+textarea {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  min-height: 100px;
+}
+
+.comp-b-que-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comp-b-que {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px 10px;
+  border: 1px solid var(--accent-two);
+  border-radius: 5px;
+}
+
+.comp-b-que > p {
+  font-weight: 500;
 }

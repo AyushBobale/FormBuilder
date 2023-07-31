@@ -3,6 +3,7 @@ import "./NewFormBuilder.css";
 import {
   CATAddCategory,
   CATAddOption,
+  COMPPassageChange,
   FILLAddOption,
   FILLChangeSentence,
   changeFromName,
@@ -138,8 +139,33 @@ const FillUpBuilder = ({ idx }) => {
     </div>
   );
 };
+
 const ComprehensionBuilder = ({ idx }) => {
-  return <p>Comprehension</p>;
+  const dispatch = useDispatch();
+  const questions = useSelector(
+    (state) => state?.rootReducer?.newForm?.data?.questions
+  );
+
+  const handlePassageChange = (e) => {
+    dispatch(COMPPassageChange({ idx: idx, passage: e.target.value }));
+  };
+  return (
+    <div>
+      <div className="comp-b-cont">
+        <p>Add passage</p>
+        <textarea
+          placeholder="Enter the passage"
+          value={questions?.data?.passage}
+          onChange={handlePassageChange}
+        />
+      </div>
+      <div className="comp-b-que-cont">
+        <div className="comp-b-que">
+          <p>Question</p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const NewFormBuilder = () => {
