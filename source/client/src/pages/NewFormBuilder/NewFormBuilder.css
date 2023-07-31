@@ -37,13 +37,15 @@ input {
   outline: none;
 }
 
-.cat-b-cats-cont {
+.cat-b-cats-cont,
+.cat-b-opts-cont {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.cat-b-cats-cont > p {
+.cat-b-cats-cont > p,
+.cat-b-opts-cont > p {
   font-weight: 500;
 }
 
@@ -53,4 +55,17 @@ input {
   border: 1px solid var(--accent-two);
   border-radius: 5px;
   width: max-content;
+}
+
+.cat-b-opts-cont > div {
+  position: relative;
+  padding: 5px 10px;
+  border: 1px solid var(--accent-two);
+  border-radius: 5px;
+  width: max-content;
+}
+
+.opt-add {
+  display: flex;
+  gap: 10px;
 }

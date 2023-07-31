@@ -2,6 +2,7 @@ import "./NewFormBuilder.css";
 
 import {
   CATAddCategory,
+  CATAddOption,
   changeFromName,
   changeQuestion,
 } from "../../redux/slices/newFormSlice";
@@ -30,6 +31,7 @@ const NewFormBuilder = () => {
 
   const CategorizeBuilder = ({ idx }) => {
     const [category, setCategory] = useState("");
+    const [option, setOption] = useState({ key: "", value: "" });
     const questions = useSelector(
       (state) => state?.rootReducer?.newForm?.data?.questions
     );
@@ -39,6 +41,20 @@ const NewFormBuilder = () => {
         event.preventDefault();
         dispatch(CATAddCategory({ idx: idx, cat: category }));
         setCategory("");
+      }
+    };
+    const handleAddOption = (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        dispatch(
+          CATAddOption({
+            idx: idx,
+            option: {
+              [option.key]: option.value || questions?.[idx]?.data?.cats?.[0],
+            },
+          })
+        );
+        setOption({ key: "", value: "" });
       }
     };
 
@@ -60,6 +76,34 @@ const NewFormBuilder = () => {
         />
         <div className="cat-b-opts-cont">
           <p>Options</p>
+          {questions?.[idx]?.data?.options?.map((elm, idx) => {
+            return (
+              <div className="cat-b-cat">
+                {Object.keys(elm)?.[0]} : {Object.values(elm)?.[0]}
+              </div>
+            );
+          })}
+        </div>
+        <div className="opt-add">
+          <input
+            type="text"
+            placeholder="Add option"
+            value={option.key}
+            onChange={(e) => setOption({ ...option, key: e.target.value })}
+            onKeyDown={handleAddOption}
+          />
+          <div class="select-wrapper">
+            <select
+              class="select"
+              onChange={(e) => {
+                setOption({ ...option, value: e.target.value });
+              }}
+            >
+              {questions?.[idx]?.data?.cats?.map((elm, idx) => {
+                return <option value={elm}>{elm}</option>;
+              })}
+            </select>
+          </div>
         </div>
       </div>
     );

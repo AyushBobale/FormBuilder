@@ -67,9 +67,26 @@ const newFormSlice = createSlice({
       };
       state.data.questions.splice(payload.idx, 1, modQue);
     },
+    CATAddOption: (state, { payload }) => {
+      console.log(payload);
+      let modQue = state.data.questions[payload.idx];
+      modQue = {
+        ...modQue,
+        data: {
+          ...(modQue?.data || {}),
+          options: [...(modQue?.data?.options || []), payload.option],
+        },
+      };
+      state.data.questions.splice(payload.idx, 1, modQue);
+    },
   },
 });
 
 export default newFormSlice.reducer;
-export const { addQ, changeQuestion, changeFromName, CATAddCategory } =
-  newFormSlice.actions;
+export const {
+  addQ,
+  changeQuestion,
+  changeFromName,
+  CATAddCategory,
+  CATAddOption,
+} = newFormSlice.actions;
